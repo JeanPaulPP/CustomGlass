@@ -8,7 +8,7 @@ if (!isset($_REQUEST['x']))
 <head>
 	<meta charset="utf-8">
 	<title>Inicio de Sesión</title>
-	<link rel="stylesheet" type="text/css" href="Estilos.css">
+	<link rel="stylesheet" type="text/css" href="../Estilos/Estilos.css">
 	<style type="text/css">
 		body{
 			justify-content: center;

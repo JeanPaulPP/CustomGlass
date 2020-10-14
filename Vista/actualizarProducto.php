@@ -15,7 +15,7 @@ if ($verificar==1)
 }
 else
 {
-	header("location:actualizarIdProducto.php?x=3");  
+	header("location:Principal.php?pg=actualizarIdProducto&x=3");  
 }
 $sql1= "SELECT idTipo, tipoProd FROM tipo_producto";
 

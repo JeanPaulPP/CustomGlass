@@ -8,8 +8,8 @@ $sql="UPDATE producto SET idProducto= '$_REQUEST[idProducto]', EstadoProducto = 
 $resultado=$objConexion->query($sql);
 
 if ($resultado)
-	header("location:../Vista/actualizarIdProducto.php?x=1");
+	header("location:../Vista/Principal.php?pg=actualizarIdProducto&x=1");
 else
-	header("location:../Vista/actualizarIdProducto.php?x=2");
+	header("location:../Vista/Principal.php?pg=actualizarIdProducto&x=2");
 
 ?>

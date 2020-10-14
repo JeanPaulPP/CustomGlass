@@ -8,8 +8,8 @@ $sql="UPDATE cliente SET idCliente= '$_REQUEST[idCliente]', EstadoCliente = '$_R
 $resultado=$objConexion->query($sql);
 
 if ($resultado)
-	header("location:../Vista/actualizarIdCliente.php?x=1");
+	header("location:../Vista/Principal.php?pg=actualizarIdCliente&x=1");
 else
-	header("location:../Vista/actualizarIdCliente.php?x=2");
+	header("location:../Vista/Principal.php?pg=actualizarIdCliente&x=2");
 
 ?>

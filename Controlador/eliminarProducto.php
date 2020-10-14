@@ -14,14 +14,14 @@ if ($verificar==1)
 }
 else
 {
-	header("location:../Vista/eliminarProductoId.php?x=3");  
+	header("location:../Vista/Principal.php?pg=eliminarProductoId&x=3");  
 }
 if ($resultado)
 	{
-	header('location:../Vista/eliminarProductoId.php?x=1');
+	header('location:../Vista/Principal.php?pg=eliminarProductoId&x=1');
 	}
 	else
-	header('location:../Vista/eliminarProductoId.php?x=2');{
+	header('location:../Vista/Principal.php?pg=eliminarProductoId&x=2');{
 	}
 
 ?>

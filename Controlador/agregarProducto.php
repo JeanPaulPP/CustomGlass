@@ -10,8 +10,8 @@ $objProducto->crearProducto($_REQUEST['idProducto'] , $_REQUEST['EstadoProducto'
 $resultado = $objProducto->registrarProducto();
 
 if ($resultado)
-	header("location:../Vista/Producto.php?x=1");
+	header("location:../Vista/Principal.php?pg=Producto&x=1");
 else
-	header("location:../Vista/Producto.php?x=2");
+	header("location:../Vista/Principal.php?pg=Producto&x=2");
 
 ?>

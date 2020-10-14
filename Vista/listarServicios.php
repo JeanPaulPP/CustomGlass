@@ -32,7 +32,7 @@
   <tr>
 
         <td><?php  echo  utf8_encode($servicio->idServicio)  ?>     </td>
-        <td><?php  echo  utf8_encode($servicio->Servicio)  ?></td> 
+        <td><?php  echo  utf8_encode($servicio->servNombre)  ?></td> 
         <td><?php  echo  utf8_encode($servicio->detServicio) ?> </td>
         <td><?php  echo  utf8_encode($servicio->NombresUsu)  ?></td>
         <td><?php  echo  utf8_encode($servicio->estadoServ)  ?></td>

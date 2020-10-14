@@ -11,7 +11,11 @@ $objConexion = Conectarse();
 
 $sql1= "SELECT idUsuario, NombresUsu FROM usuario WHERE (Rol = 3)";
 
+$sql3="SELECT idTipoServicio, servNombre FROM tipo_servicio";
+
 $sql2= "SELECT idEstadoServ, estadoServ FROM estado_servicio";
+
+$tipos = $objConexion->query($sql3);
 
 $estados = $objConexion->query($sql2);
 
@@ -50,7 +54,22 @@ $usuarios = $objConexion->query($sql1);
 
 			<div class="grupo">
 				<label>Nombre Servicio</label>
-				<input type="text" name="Servicio" id="Servicio" required>
+				<select name="Servicio" id="Servicio"> 
+					<option value="0">Seleccionar</option>   
+              
+             			<?php
+             			
+              			while ($tipo = $tipos->fetch_object())
+              			{
+               			?>
+                 		<option value="<?php echo $tipo->idTipoServicio?>">
+                 			<?php echo utf8_encode($tipo->servNombre)?>
+                 			</option>  
+            			<?php  
+              			}		  
+              
+             			?>
+				</select>
 			</div>
 
 			<div class="grupo">
