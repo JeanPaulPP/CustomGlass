@@ -14,14 +14,14 @@ if ($verificar==1)
 }
 else
 {
-	header("location:../Vista/eliminarClienteId.php?x=3");  
+	header("location:../Vista/Principal.php?pg=eliminarClienteId&x=3");  
 }
 if ($resultado)
 	{
-	header('location:../Vista/eliminarClienteId.php?x=1');
+	header('location:../Vista/Principal.php?pg=eliminarClienteId&x=1');
 	}
 	else
-	header('location:../Vista/eliminarClienteId.php?x=2');{
+	header('location:../Vista/Principal.php?pg=eliminarClienteId&x=2');{
 	}
 
 ?>

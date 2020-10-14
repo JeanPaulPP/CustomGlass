@@ -15,7 +15,7 @@ if ($verificar==1)
 }
 else
 {
-	header("location:actualizarIdCliente.php?x=3");  
+	header("location:Principal.php?pg=actualizarIdCliente&x=3");  
 }
 $sql2= "SELECT idEstado, nombreEstado FROM estado_cliente";
 

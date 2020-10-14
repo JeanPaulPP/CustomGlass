@@ -9,8 +9,8 @@ $objCliente->crearCliente($_REQUEST['idCliente'] , '1', $_REQUEST['correoClie'],
 $resultado = $objCliente->registrarCliente();
 
 if ($resultado)
-	header("location:../Vista/cliente.php?x=1");
+	header("location:../Vista/Principal.php?pg=cliente&x=1");
 else
-	header("location:../Vista/cliente.php?x=2");
+	header("location:../Vista/Principal.php?pg=cliente&x=2");
 
 ?>

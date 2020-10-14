@@ -12,7 +12,7 @@ if (!isset($_REQUEST['x']))
 	<br><br><br><br><br><br>
 <center>
 	<h2>Ingrese Id del Servicio Que Desea Actualizar Los Datos</h2>
-	<form id="form" method="post" action="actualizarServicio.php">
+	<form id="form" method="post" action="Principal.php?pg=actualizarServicio">
 		<span class="grupo">
 					<label for="idCliente">No. Identificación Servicio:</label>
 					<input type="number" name="idServicio" id="idServicio" required><span class="barra"></span>

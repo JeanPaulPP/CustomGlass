@@ -9,8 +9,8 @@ $objServicio->crearServicio($_REQUEST['Usuario'] , $_REQUEST['Servicio'], $_REQU
 $resultado = $objServicio->registrarServicio();
 
 if ($resultado)
-	header("location:../Vista/Servicio.php?x=1");
+	header("location:../Vista/Principal.php?pg=Servicio&x=1");
 else
-	header("location:../Vista/Sericio.php?x=2");
+	header("location:../Vista/Principal.php?pg=Servicio&x=2");
 
 ?>
