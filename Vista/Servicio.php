@@ -26,14 +26,14 @@ $usuarios = $objConexion->query($sql1);
 <html>
 <head>
 	<title>Actualiza Servicio</title>
-	<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">
+	<!--<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">-->
 </head>
 <body>
 	<form action="../Controlador/agregarServicio.php" id="Form">
 		<div id="Form">
 			<h1>Servicio</h1>
 			<div class="grupo">
-				<label>Nombre del Renovador</label>
+				<label>Nombre del Renovador</label><br>
 				<select name="Usuario" id="Usuario"> 
 					<option value="0">Seleccione</option>   
               
@@ -53,7 +53,7 @@ $usuarios = $objConexion->query($sql1);
 			</div>
 
 			<div class="grupo">
-				<label>Nombre Servicio</label>
+				<label>Nombre Servicio</label><br>
 				<select name="Servicio" id="Servicio"> 
 					<option value="0">Seleccionar</option>   
               
@@ -73,21 +73,21 @@ $usuarios = $objConexion->query($sql1);
 			</div>
 
 			<div class="grupo">
-				<label>Informacion del servicio</label>
+				<label>Informacion del servicio</label><br>
 				<textarea placeholder="Escribir Informacion sobre el servicio que ofrecen" name="detServicio" id="detServicio" required></textarea>
 			</div>
 
 			<div class="grupo">
-				<label>Numero de contacto</label>
+				<label>Numero de contacto</label><br>
 				<input type="text" name="telefono" id="telefono" required>
 			</div>
 
 			<div class="grupo">
-				<label>Imagen del Servicio (.png/.jpeg)</label>
+				<label>Imagen del Servicio (.png/.jpeg)</label><br>
 				<input type="file" name="imagenServ" id="imagenServ" accept="image/png, image/jpeg">
 			</div>
 			<div class="grupo">
-				<label>Estado del Servicio</label>
+				<label>Estado del Servicio</label><br>
 				<select name="Estado" id="Estado"> 
 					<option value="0">Seleccione</option>   
               

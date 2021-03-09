@@ -8,7 +8,15 @@ if (!isset($_REQUEST['x']))
 <head>
 	<meta charset="utf-8">
 	<title>Registrar Producto</title>
-	<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">
+	<!--<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">-->
+	<style>
+		#boton {
+			position: absolute;
+			cursor: pointer;
+			width: 20px;
+			right: 180px;
+		}
+	</style>
 </head>
 <?php  
 
@@ -22,46 +30,64 @@ $estados = $objConexion->query($sql1);
 
 ?>
 <body>
+	<center>
 	<form action="../Controlador/registrarCliente.php" id="Form">
 		<h1>Registrar Cliente</h1>
 		<div id="Form">
 			<div class="grupo">
-				<label>Id CLiente</label>
+				<label>Id CLiente</label><br>
 				<input type="number" name="idCliente" id="idCliente" required>
 			</div>
 			<div class="grupo">
-				<label>Correo</label>
+				<label>Correo</label><br>
 				<input type="email" name="correoClie" id="correoClie" required>
 			</div>
 
 			<div class="grupo">
-				<label>Contraseña</label>
-				<input type="password" name="contraClie" id="contraClie" required>
+				<label>Contraseña</label><br>
+				<input type="password" name="contraClie" id="contraClie" required><img src="../Imagenes/mostrar.png" id="boton">
 			</div>
+			<script>
+	
+	var boton = document.getElementById('boton');
+	var input = document.getElementById('contraClie');
+
+	boton.addEventListener('click', mostrarContraseña);
+
+	function mostrarContraseña(){
+		if(input.type == "password"){
+			input.type = "text";
+			boton.src = "../Imagenes/ocultar.png";
+		} else {
+			input.type = "password";
+			boton.src = "../Imagenes/mostrar.png";
+		}
+	}
+</script>
 
 			<div class="grupo">
-				<label>Dirección</label>
+				<label>Dirección</label><br>
 				<input type="text" name="direccion" id="direccion" required>
 			</div>
 
 
 			<div class="grupo">
-				<label>1.Teléfono</label>
+				<label>1.Teléfono</label><br>
 				<input type="number" name="telefono" id="telefono">
 			</div>
 
 			<div class="grupo">
-				<label>2.Teléfono</label>
+				<label>2.Teléfono</label><br>
 				<input type="number" name="telefono2" id="telefono2">
 			</div>
 
 			<div class="grupo">
-				<label>Nombres</label>
+				<label>Nombres</label><br>
 				<input type="text" name="nombres" id="nombres" required>
 			</div>
 
 			<div class="grupo">
-				<label>Apellidos</label>
+				<label>Apellidos</label><br>
 				<input type="text" name="apellidos" id="apellidos" required>
 			</div>
 			<!--Codigo despleglable estado cliente, comentado porque al crear el cliente su estado de una vez sera activo-->
@@ -97,5 +123,6 @@ $estados = $objConexion->query($sql1);
 if ($x==2)
   echo "<script>alert('No se pudo registrar el cliente');</script>";
 ?>
+</center>
 </body>
 </html>

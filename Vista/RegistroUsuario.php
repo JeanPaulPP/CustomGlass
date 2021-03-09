@@ -24,6 +24,11 @@ $roles = $objConexion->query($sql);
 			justify-content: center;
 	        align-items: center;
 		}
+		#boton {
+			position: absolute;
+			cursor: pointer;
+			width: 20px;
+		}
 	</style>
 </head>
 <body>
@@ -49,10 +54,27 @@ $roles = $objConexion->query($sql);
 				</span>
 
 				<span class="grupo">
-					<input type="password" name="ContraUsuario" id="ContraUsuario" required><span class="barra"></span>
+					<input type="password" name="ContraUsuario" id="ContraUsuario" required><span class="barra"></span><img src="../Imagenes/mostrar.png" id="boton">
 					<label for="Contraseña">Contraseña</label>
 				</span>
 			</div>
+			<script>
+	
+	var boton = document.getElementById('boton');
+	var input = document.getElementById('ContraUsuario');
+
+	boton.addEventListener('click', mostrarContraseña);
+
+	function mostrarContraseña(){
+		if(input.type == "password"){
+			input.type = "text";
+			boton.src = "../Imagenes/ocultar.png";
+		} else {
+			input.type = "password";
+			boton.src = "../Imagenes/mostrar.png";
+		}
+	}
+</script>
 			<br>
 			<div class="grupo">
 				<select id="rol" name="rol">

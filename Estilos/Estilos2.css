@@ -1,15 +1,7 @@
 :root{
 	--colorTextos:#6D7074;
 }
-body{
-	background: #ffffff;
-	background: -webkit-linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
-	background: linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
-	height: 700px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+
 
 h1{
 	text-align: center;

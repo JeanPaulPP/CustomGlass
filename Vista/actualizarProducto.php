@@ -33,39 +33,39 @@ $estados = $objConexion->query($sql2);
 </head>
 <body>
 	<center>
-	<h2>Actualizar Producto</h2>
+	<h1>Actualizar Producto</h1>
 	<form id="form" method="post" action="../Controlador/ValidarActProducto.php">
 		<span class="grupo">
-					<label for="idProducto">No. Identificación Producto:</label>
+					<label for="idProducto">No. Identificación Producto:</label><br>
 					<input type="text" readonly="readonly" name="idProducto" id="idProducto" required value="<?php echo $producto->idProducto ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
-					<label for="nombreProd">Nombre Producto:</label>
+					<label for="nombreProd">Nombre Producto:</label><br>
 					<input type="text" name="nombreProd" required id="nombreProd" value="<?php echo utf8_encode($producto->nombreProd) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
-					<label for="medidasProd">Medidas Producto:</label>
+					<label for="medidasProd">Medidas Producto:</label><br>
 					<input type="text" name="medidasProd" required id="medidasProd" value="<?php echo utf8_encode($producto->medidasProd) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
-					<label for="materialProd">Material Producto:</label>
+					<label for="materialProd">Material Producto:</label><br>
 					<input type="text" name="materialProd" required id="materialProd" value="<?php echo utf8_encode($producto->materialProd) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
-					<label for="costoUnitario">Costo Unitario Producto:</label>
+					<label for="costoUnitario">Costo Unitario Producto:</label><br>
 					<input type="number" name="costoUnitario" required id="costoUnitario" value="<?php echo utf8_encode($producto->costoUnitario) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
-					<label for="IVA">IVA:</label>
+					<label for="IVA">IVA:</label><br>
 					<input type="text" name="IVA" required id="IVA" value="<?php echo utf8_encode($producto->IVA) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
-				<label for="TipoProducto">Tipo Producto:</label>
+				<label for="TipoProducto">Tipo Producto:</label><br>
 				<select name="TipoProducto" id="TipoProducto"> 
 					<option value="<?php echo $producto->TipoProducto ?>"><?php echo utf8_encode($producto->tipoProd); ?></option>   
               
@@ -84,7 +84,7 @@ $estados = $objConexion->query($sql2);
 				</select>
 
 				<br><br>
-				<label for="EstadoProducto">Estado Producto:</label>
+				<label for="EstadoProducto">Estado Producto:</label><br>
 				<select name="EstadoProducto" id="EstadoProducto"> 
 					<option value="<?php echo $producto->EstadoProducto ?>"><?php echo utf8_encode($producto->estadoProd); ?></option>   
               

@@ -11,7 +11,7 @@ if (!isset($_REQUEST['x']))
 <body>
 	<br><br><br><br><br><br>
 <center>
-	<h2>Ingrese Id del Producto Que Desea Actualizar</h2>
+	<h1>Ingrese Id del Producto Que Desea Actualizar</h1>
 	<form id="form" method="post" action="Principal.php?pg=actualizarProducto">
 		<span class="grupo">
 					<label for="idProducto">No. Identificación Producto:</label>
