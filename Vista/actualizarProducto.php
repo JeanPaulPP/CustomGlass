@@ -34,7 +34,7 @@ $estados = $objConexion->query($sql2);
 <body>
 	<center>
 	<h1>Actualizar Producto</h1>
-	<form id="form" method="post" action="../Controlador/ValidarActProducto.php">
+	<form id="form" method="post" action="../Controlador/ValidarActProducto.php" oninput="IVA.value=(parseInt(costoUnitario.value)*19)/100">
 		<span class="grupo">
 					<label for="idProducto">No. Identificación Producto:</label><br>
 					<input type="text" readonly="readonly" name="idProducto" id="idProducto" required value="<?php echo $producto->idProducto ?>"><span class="barra"></span>
@@ -42,7 +42,7 @@ $estados = $objConexion->query($sql2);
 				<br><br>
 				<span class="grupo">
 					<label for="nombreProd">Nombre Producto:</label><br>
-					<input type="text" name="nombreProd" required id="nombreProd" value="<?php echo utf8_encode($producto->nombreProd) ?>"><span class="barra"></span>
+					<input type="text" name="nombreProd" required id="nombreProd" pattern="[A-Za-zÀ-ž\s]+" title="Solo texto, los valores numericos no son validos" value="<?php echo utf8_encode($producto->nombreProd) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
@@ -62,12 +62,12 @@ $estados = $objConexion->query($sql2);
 				<br><br>
 				<span class="grupo">
 					<label for="IVA">IVA:</label><br>
-					<input type="text" name="IVA" required id="IVA" value="<?php echo utf8_encode($producto->IVA) ?>"><span class="barra"></span>
+					<input type="block" name="IVA" id="IVA"><span class="barra" required></span>
 				</span>
 				<br><br>
 				<label for="TipoProducto">Tipo Producto:</label><br>
 				<select name="TipoProducto" id="TipoProducto"> 
-					<option value="<?php echo $producto->TipoProducto ?>"><?php echo utf8_encode($producto->tipoProd); ?></option>   
+					<option value="<?php echo $producto->TipoProducto ?>"><?php echo $producto->TipoProducto ?><p> - </p><?php echo ($producto->tipoProd); ?></option>   
               
              			<?php
              			
@@ -75,7 +75,7 @@ $estados = $objConexion->query($sql2);
               			{
                			?>
                  		<option value="<?php echo $tipo->idTipo?>">
-                 			<?php echo utf8_encode($tipo->tipoProd)?>
+                 			<?php echo $tipo->idTipo?><p> - </p><?php echo ($tipo->tipoProd)?>
                  			</option>  
             			<?php  
               			}		  
@@ -86,7 +86,7 @@ $estados = $objConexion->query($sql2);
 				<br><br>
 				<label for="EstadoProducto">Estado Producto:</label><br>
 				<select name="EstadoProducto" id="EstadoProducto"> 
-					<option value="<?php echo $producto->EstadoProducto ?>"><?php echo utf8_encode($producto->estadoProd); ?></option>   
+					<option value="<?php echo $producto->EstadoProducto ?>"><?php echo $producto->EstadoProducto ?><p> - </p><?php echo utf8_encode($producto->estadoProd); ?></option>   
               
              			<?php
              			
@@ -94,7 +94,7 @@ $estados = $objConexion->query($sql2);
               			{
                			?>
                  		<option value="<?php echo $estado->idEstadoProd?>">
-                 			<?php echo utf8_encode($estado->estadoProd)?>
+                 			<?php echo $estado->idEstadoProd?><p> - </p><?php echo utf8_encode($estado->estadoProd)?>
                  			</option>  
             			<?php  
               			}		  

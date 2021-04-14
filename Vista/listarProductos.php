@@ -14,31 +14,32 @@
 </head>
 <body>
 <h1 align="center">PRODUCTOS</h1>
-<table border="3" align="center">
+<table align="center">
+  <thead>
   <tr align="center">
-    <td>Id</td>
-    <td>Nombre</td>
-    <td>Medidas</td>
-    <td>Material</td>
-    <td>Costo Unitario</td> 
-    <td>IVA</td> 
-    <td>Tipo Producto</td>
-    <td>Estado Producto</td>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Medidas</th>
+    <th>Material</th>
+    <th>Costo Unitario</th> 
+    <th>IVA</th> 
+    <th>Tipo Producto</th>
+    <th>Estado Producto</th>
   </tr>
-  
+  </thead>
   <?php
   while ($producto = $productos->fetch_object())
   {
   ?>
   <tr>
-        <td><?php  echo  utf8_encode($producto->idProducto)  ?>     </td>
-        <td><?php  echo  utf8_encode($producto->nombreProd)  ?></td> 
-        <td><?php  echo  utf8_encode($producto->medidasProd) ?> </td>
-        <td><?php  echo  utf8_encode($producto->materialProd)  ?></td>
-        <td><?php  echo  utf8_encode($producto->costoUnitario)  ?></td>
-        <td><?php  echo  utf8_encode($producto->IVA)  ?></td> 
-        <td><?php  echo  utf8_encode($producto->tipoProd)  ?></td> 
-        <td><?php  echo  utf8_encode($producto->estadoProd)  ?></td> 
+        <td><?php  echo  ($producto->idProducto)  ?>     </td>
+        <td><?php  echo  ($producto->nombreProd)  ?></td> 
+        <td><?php  echo  ($producto->medidasProd) ?> </td>
+        <td><?php  echo  ($producto->materialProd)  ?></td>
+        <td><?php  echo  ($producto->costoUnitario)  ?></td>
+        <td><?php  echo  ($producto->IVA)  ?></td> 
+        <td><?php  echo  ($producto->tipoProd)  ?></td> 
+        <td><?php  echo  ($producto->estadoProd)  ?></td> 
   </tr>
   <?php
   }

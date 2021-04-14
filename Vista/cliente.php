@@ -40,12 +40,12 @@ $estados = $objConexion->query($sql1);
 			</div>
 			<div class="grupo">
 				<label>Correo</label><br>
-				<input type="email" name="correoClie" id="correoClie" required>
+				<input type="email" name="correoClie" id="correoClie" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="caracter@caracter.dominio" required>
 			</div>
 
 			<div class="grupo">
 				<label>Contraseña</label><br>
-				<input type="password" name="contraClie" id="contraClie" required><img src="../Imagenes/mostrar.png" id="boton">
+				<input type="password" name="contraClie" id="contraClie" pattern=".{8,}"" title="Minimo 8 caracteres" required><img src="../Imagenes/mostrar.png" id="boton">
 			</div>
 			<script>
 	

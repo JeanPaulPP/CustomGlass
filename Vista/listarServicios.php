@@ -13,17 +13,18 @@
 </head>
 <body>
 <h1 align="center">Servicios</h1>
-<table border="3" align="center">
+<table align="center">
+  <thead>
   <tr align="center">
-    <td>Id</td>
-    <td>Servicio</td>
-    <td>Detalles</td>
-    <td>Autor</td>
-    <td>Estado</td> 
-    <td>Contacto</td> 
-    <td>Imagen</td> 
+    <th>Id</th>
+    <th>Servicio</th>
+    <th>Detalles</th>
+    <th>Autor</th>
+    <th>Estado</th> 
+    <th>Contacto</th> 
+    <th>Imagen</th> 
   </tr>
-  
+  </thead>
   <?php
   while ($servicio = $servicios->fetch_object())
   {

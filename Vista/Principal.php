@@ -2,7 +2,7 @@
 session_start();
 extract ($_REQUEST);
 if (!isset($_SESSION['user']))
-	header("location:index.php?x=2");
+	header("location:index.php?y=2");
 if (!isset($_REQUEST['pg']))
 	$pg="pgInicial";
 ?>
@@ -167,6 +167,27 @@ label{
 :root{
 	--colorTextos:#6D7074;
 } 
+table {
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+th, td {
+	padding: 20px;	
+}
+thead {
+	background-color: #1951FF;
+	border-bottom: solid 5px #0F362D; 
+	color: white;
+}
+tr:nth-child(even){
+	background-color: #ddd;
+}
+tr:hover td{
+	background-color: #6288FF;
+	color: white;
+}
 
 	</style>
 </head>
@@ -194,7 +215,7 @@ label{
 
 </ul>
 </div>
- <div id="divContenido">
+ <div id="divContenido" align="center">
         <?php include $pg.".php"; ?>
       </div>
 </div>
