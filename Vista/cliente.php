@@ -7,7 +7,7 @@ if (!isset($_REQUEST['x']))
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Registrar Producto</title>
+	<title>Registrar Cliente</title>
 	<!--<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">-->
 	<style>
 		#boton {
@@ -19,10 +19,6 @@ if (!isset($_REQUEST['x']))
 	</style>
 </head>
 <?php  
-
-require "../Modelo/conexionBasesDatos.php";
-
-$objConexion = Conectarse();
 
 $sql1= "SELECT idEstado, nombreEstado FROM estado_cliente";
 
@@ -40,12 +36,12 @@ $estados = $objConexion->query($sql1);
 			</div>
 			<div class="grupo">
 				<label>Correo</label><br>
-				<input type="email" name="correoClie" id="correoClie" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="caracter@caracter.dominio" required>
+				<input type="email" name="correoClie" id="correoClie" pattern="[a-zA-ZÀ-ž0-9._%+-]+@[a-zA-ZÀ-ž0-9.-]+\.[a-z]{2,}$" title="caracter@caracter.dominio" required>
 			</div>
 
 			<div class="grupo">
 				<label>Contraseña</label><br>
-				<input type="password" name="contraClie" id="contraClie" pattern=".{8,}"" title="Minimo 8 caracteres" required><img src="../Imagenes/mostrar.png" id="boton">
+				<input type="password" name="contraClie" id="contraClie" pattern=".{8,}" title="Minimo 8 caracteres" required><img src="../Imagenes/mostrar.png" id="boton">
 			</div>
 			<script>
 	
@@ -73,7 +69,7 @@ $estados = $objConexion->query($sql1);
 
 			<div class="grupo">
 				<label>1.Teléfono</label><br>
-				<input type="number" name="telefono" id="telefono">
+				<input type="number" name="telefono" id="telefono" required>
 			</div>
 
 			<div class="grupo">
@@ -83,12 +79,12 @@ $estados = $objConexion->query($sql1);
 
 			<div class="grupo">
 				<label>Nombres</label><br>
-				<input type="text" name="nombres" id="nombres" required>
+				<input type="text" name="nombres" id="nombres" pattern="[A-Za-zÀ-ž\s]+" title="Solo texto, los valores numericos no son validos" required>
 			</div>
 
 			<div class="grupo">
 				<label>Apellidos</label><br>
-				<input type="text" name="apellidos" id="apellidos" required>
+				<input type="text" name="apellidos" id="apellidos" pattern="[A-Za-zÀ-ž\s]+" title="Solo texto, los valores numericos no son validos" required>
 			</div>
 			<!--Codigo despleglable estado cliente, comentado porque al crear el cliente su estado de una vez sera activo-->
 			<!--<div class="grupo">

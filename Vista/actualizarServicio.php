@@ -83,7 +83,7 @@ $usuarios = $objConexion->query($sql1);
 
 			<div class="grupo">
 				<label>Numero de contacto</label>
-				<input type="text" name="telefono" id="telefono" required value="<?php echo utf8_encode($servicio->telefono) ?>">
+				<input type="number" name="telefono" id="telefono" required value="<?php echo utf8_encode($servicio->telefono) ?>">
 			</div>
 
 			<div class="grupo">

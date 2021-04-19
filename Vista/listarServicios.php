@@ -1,7 +1,5 @@
 <?php
-  require "../Modelo/conexionBasesDatos.php";
   require "../Modelo/claseServicio.php";
-  $objConexion = Conectarse();
   $objServicios = new servicio();
   $servicios= $objServicios->consultarServicios();
 ?>

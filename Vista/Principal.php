@@ -6,29 +6,59 @@ if (!isset($_SESSION['user']))
 if (!isset($_REQUEST['pg']))
 	$pg="pgInicial";
 ?>
+<?php
+require "../Modelo/conexionBasesDatos.php";
+$objConexion = Conectarse();
+$sqlusu="SELECT * FROM usuario WHERE (CorreoUsuario = '$_SESSION[user]')";
+$usuarioN = $objConexion->query($sqlusu);
+
+$usuarioNa = $usuarioN->fetch_object();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inicio</title>
-	<link rel="icon" type="image/x-icon" href="../Imagenes/header.ico" />
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Lobster&family=Merriweather&display=swap');
+</style>
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Lobster&display=swap');
+</style>
+	<link rel="icon" type="image/x-icon" href="../Imagenes/icono.ico" />
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+</style>
 	<style type="text/css">
 		body{
 	background: #ffffff;
 	background: -webkit-linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
 	background: linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
 	display: flex;
+	margin: 0;
+	padding: 0;
 	}
 	#box {
 		position: absolute;
-		background: white;
+		background: #ffffff;
+	background: -webkit-linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
+	background: linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
 	padding: 40px 0;
 	box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
-	border-radius: 10px;
-	width: 1100px;
+	width: 100%;
 	height: 100%;
-	right: 109px;
-	top: 330px;
 	display: inline-block;
+	margin: 0;
+	padding: 0;
+	}
+	#saludo {
+		position: relative;
+		left: 400px;
+		top: 50px;
+		display: inline;
+		font-family: 'Lobster', cursive;
+		font-size: 50px;
+		color: #f37d4d;
+		text-shadow: 2px 2px 2px black;
 	}
 	#menu ul {
 		
@@ -37,41 +67,109 @@ if (!isset($_REQUEST['pg']))
 		margin: 0;
 		padding: 0;
 	}
+
+	#usuariotp {
+		font-family: 'Merriweather', serif;
+		display: inline;
+		color: #ddd;
+		top: -25px;
+		right: -85px;
+		position: relative;
+	}
+	#perfilusu {
+		text-decoration: none;
+		display: inline;
+		position: absolute;
+		color: black;
+		font-family: 'Cairo', sans-serif; 
+		text-shadow: 1px 1px 1px #000; 
+		padding: 10px;
+		position: absolute;
+		background: white;
+		right: 200px;
+		top: 85px;
+	}
+	#perfilusu:hover {
+	 	background: #ddd;
+	 	color: black;
+	 }
+	 #passusu {
+	 	text-decoration: none;
+		display: inline;
+		position: absolute;
+		color: black;
+		font-family: 'Cairo', sans-serif; 
+		text-shadow: 1px 1px 1px #000; 
+		padding: 10px;
+		position: absolute;
+		background: white;
+		right: 35px;
+		top: 85px;
+	 }
+	 #passusu:hover {
+	 	background: #ddd;
+	 	color: black;
+	 }
 #divContenido {
 	background-color: white;
   position:absolute;
-  left:80px;
-  top:110px;
-  width:928px;
+  left:380px;
+  top:130px;
+  width:968px;
   height:500px;
   z-index:4;
   overflow:auto;
+  border-radius: 10px;
   }
   #menu {
   	position: absolute;
   	top: 0px;
-  	background-color: black;
-  	width: 1100px;
-  	height: 80px;
+  	background-color: white;
+  	width: 350px;
+  	height: 100%;
+  	margin: 0;
+  	box-shadow: 3px, 3px, 3px black;
   }
+  #menu li ul{
+  	display: none;
+  	position: absolute;
+  	right: -30px;
+  }
+  #menu li:hover > ul {
+  	display: block;
+  	list-style: cambodian; 
+  }
+  #titulo {
+  	color: red;
+		text-decoration: none;
+		font-family: 'Cairo', sans-serif; 
+		text-shadow: 1px 1px 1px #000; 
+		padding: 8px;
+		height: 25px;
+		display: inline-block;
+		position: center;
+  }
+
   li {
   		float: left;
   		font-color: black; 
-		background: #ffffff;
-		background: -webkit-linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
-		background: linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
-		display: inline-block;
-		width: 110px;
-		height: 80px;
+		background: white;
+		position: center;
+		width: 310px;
+		height: 42px;
+		margin: 0;
+		padding: 8px;
+		border-radius: 50px;
 	}
- a { 
-		color: #ffffff;
+ #opcion { 
+		color: black;
 		text-decoration: none;
-		font-family: 
-		text-shadow: -2px -2px 1px #000; 
+		font-family: 'Cairo', sans-serif; 
+		text-shadow: 1px 1px 1px #000; 
 		padding: 20px;
 		height: 30px;
 		display: inline-block;
+		position: center;
 	 } 
 
  li {
@@ -79,8 +177,8 @@ if (!isset($_REQUEST['pg']))
 	 	text-align: center;
 	 }
 	  li:hover {
-	 	background: black;
-	 	font-color: black;
+	 	background: #ddd;
+	 	color: white;
 	 }
 
 #header {
@@ -174,7 +272,7 @@ table {
 	width: 100%;
 }
 th, td {
-	padding: 20px;	
+	padding: 10px;	
 }
 thead {
 	background-color: #1951FF;
@@ -192,28 +290,44 @@ tr:hover td{
 	</style>
 </head>
 <body>
-	<div id="header" align="center">
-	<img src="../Imagenes/250576.png" >
-</div>
 	<div id="box">
-		<div id="menu">
-		<ul>
-			
-	<li><a href="Principal.php?pg=Producto">Agregar Producto</a></li>
-	<li><a href="Principal.php?pg=listarProductos">Listar productos</a></li>
-	<li><a href="Principal.php?pg=actualizarIdProducto">Actualizar producto por Id</a></li>
-	<!--<li><a href="Principal.php?pg=eliminarProductoId">Eliminar producto por Id</a></li>-->
-	<li><a href="Principal.php?pg=cliente">Agregar Cliente</a></li>
-	<li><a href="Principal.php?pg=listarClientes">Listar clientes</a></li>
-	<li><a href="Principal.php?pg=actualizarIdCliente">Actualizar cliente por Id</a></li>
-	<!--<li><a href="Principal.php?pg=eliminarClienteId">Eliminar Cliente por Id</a></li>-->
-	<li><a href="Principal.php?pg=Servicio">Agregar Servicio</a></li>
-	<li><a href="Principal.php?pg=listarServicios">Listar servicios</a></li>
-	<li><a href="Principal.php?pg=actualizarIdServicio">Actualizar Servicio por Id</a></li>
-	<!--<li><a href="Principal.php?pg=eliminarServicioId">Eliminar Servicio por Id</a></li>-->
-	<li><a href="../Controlador/salir.php">Cerrar Sesión</a></li>
 
+		<p id="saludo"> Bienvenido,  <?php echo $usuarioNa->NombresUsu  ?></p>
+
+		<a id="perfilusu" href="Principal.php?pg=usuario">Editar perfil</a>
+		<a id="passusu" href="Principal.php?pg=usuariopass">Cambiar Contraseña</a>
+
+		<div id="menu">
+		
+			<img src="../Imagenes/menu.png" width="100%"><p id="usuariotp">Usuario Administrador</p>
+
+	<li><a id="opcion" href="Principal.php?pg=pgInicial">Inicio</a></li><br>	
+	<li id="titulo">Productos
+	<ul>
+	<li><a id="opcion" href="Principal.php?pg=Producto">Agregar Producto</a></li><br>
+	<li><a id="opcion" href="Principal.php?pg=listarProductos">Listar productos</a></li><br>
+	<li><a id="opcion" href="Principal.php?pg=actualizarIdProducto">Actualizar producto por Id</a></li><br><br>
+	<!--<li><a href="Principal.php?pg=eliminarProductoId">Eliminar producto por Id</a></li>-->
 </ul>
+</li>
+<li id="titulo">Clientes
+	<ul>
+	<li><a id="opcion" href="Principal.php?pg=cliente">Agregar Cliente</a></li><br>
+	<li><a id="opcion" href="Principal.php?pg=listarClientes">Listar clientes</a></li><br>
+	<li><a id="opcion" href="Principal.php?pg=actualizarIdCliente">Actualizar cliente por Id</a></li><br>
+	<!--<li><a href="Principal.php?pg=eliminarClienteId">Eliminar Cliente por Id</a></li>-->
+</ul>
+</li>
+<li id="titulo">Servicios
+	<ul>
+	<li><a id="opcion" href="Principal.php?pg=Servicio">Agregar Servicio</a></li><br>
+	<li><a id="opcion" href="Principal.php?pg=listarServicios">Listar servicios</a></li><br>
+	<li><a id="opcion" href="Principal.php?pg=actualizarIdServicio">Actualizar Servicio por Id</a></li>
+	<!--<li><a href="Principal.php?pg=eliminarServicioId">Eliminar Servicio por Id</a></li>-->
+</ul>
+</li>
+	<li><a id="opcion" href="../Controlador/salir.php">Cerrar Sesión</a></li><br>
+
 </div>
  <div id="divContenido" align="center">
         <?php include $pg.".php"; ?>

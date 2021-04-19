@@ -38,22 +38,22 @@ $estados = $objConexion->query($sql2);
 				<br><br>
 				<span class="grupo">
 					<label for="nombres">Nombres :</label>
-					<input type="text" name="nombres" required id="nombres" value="<?php echo utf8_encode($cliente->Nombres) ?>"><span class="barra"></span>
+					<input type="text" name="nombres" pattern="[A-Za-zÀ-ž\s]+" title="Solo texto, los valores numericos no son validos" required id="nombres" value="<?php echo utf8_encode($cliente->Nombres) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
 					<label for="apellidos">Apellidos :</label>
-					<input type="text" name="apellidos" required id="apellidos" value="<?php echo utf8_encode($cliente->Apellidos) ?>"><span class="barra"></span>
+					<input type="text" name="apellidos" pattern="[A-Za-zÀ-ž\s]+" title="Solo texto, los valores numericos no son validos" required id="apellidos" value="<?php echo utf8_encode($cliente->Apellidos) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
 					<label for="correoClie">Correo :</label>
-					<input type="email" name="correoClie" required id="correoClie" value="<?php echo utf8_encode($cliente->correoClie) ?>"><span class="barra"></span>
+					<input type="email" name="correoClie" pattern="[a-zA-ZÀ-ž0-9._%+-]+@[a-zA-ZÀ-ž0-9.-]+\.[a-z]{2,}$" title="caracter@caracter.dominio" required id="correoClie" value="<?php echo utf8_encode($cliente->correoClie) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
 					<label for="contraClie">Contraseña :</label>
-					<input type="text" name="contraClie" required id="contraClie" value="<?php echo utf8_encode($cliente->contraClie) ?>"><span class="barra"></span>
+					<input type="text" name="contraClie" pattern=".{8,}" title="Minimo 8 caracteres" required id="contraClie" value="<?php echo utf8_encode($cliente->contraClie) ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<span class="grupo">
@@ -68,7 +68,7 @@ $estados = $objConexion->query($sql2);
 				<br><br>
 				<span class="grupo">
 					<label for="telefono2">2. Telefono :</label>
-					<input type="number" name="telefono2" required id="telefono2" value="<?php echo utf8_encode($cliente->Telefono2) ?>"><span class="barra"></span>
+					<input type="number" name="telefono2" id="telefono2" value="<?php echo utf8_encode($cliente->Telefono2) ?>"><span class="barra"></span>
 				</span>
 
 				<br><br>

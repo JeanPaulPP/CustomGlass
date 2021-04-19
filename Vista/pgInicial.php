@@ -7,5 +7,7 @@
 
 <body>
 BIENVENIDO A CUSTOM GLASS
+<br><br>
+<li><a href="Principal.php?pg=pgInicial">Inicio</a></li>
 </body>
 </html>

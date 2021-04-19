@@ -1,7 +1,5 @@
 <?php
-  require "../Modelo/conexionBasesDatos.php";
   require "../Modelo/claseProducto.php";
-  $objConexion = Conectarse();
   #$sql="SELECT p.idProducto, p.nombreProd, p.medidasProd, p.materialProd, p.costoUnitario, p.IVA, tp.tipoProd, ep.estadoProd FROM producto p, tipo_producto tp, estado_producto ep WHERE (p.EstadoProducto = ep.idEstadoProd) AND (p.TipoProducto = tp.idTipo)";
   $objProductos = new producto();
   $productos= $objProductos->consultarProductos();

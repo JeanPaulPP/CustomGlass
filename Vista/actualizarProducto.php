@@ -1,7 +1,4 @@
 <?php
-require "../Modelo/conexionBasesDatos.php";
-
-$objConexion = Conectarse();
 $sql="SELECT p.idProducto, p.TipoProducto, p.EstadoProducto, p.nombreProd, p.medidasProd, p.materialProd, p.costoUnitario, p.IVA, tp.tipoProd, ep.estadoProd FROM producto p, tipo_producto tp, estado_producto ep WHERE (p.EstadoProducto = ep.idEstadoProd) AND (p.TipoProducto = tp.idTipo) AND (p.idProducto = $_REQUEST[idProducto])";
 
 $productox = $objConexion->query($sql);

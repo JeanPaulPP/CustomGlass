@@ -12,10 +12,6 @@ if (!isset($_REQUEST['x']))
 </head>
 <?php  
 
-require "../Modelo/conexionBasesDatos.php";
-
-$objConexion = Conectarse();
-
 $sql= "SELECT idTipo, tipoProd FROM tipo_producto";
 
 $tipos = $objConexion->query($sql);

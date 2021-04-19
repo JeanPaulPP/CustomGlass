@@ -43,7 +43,7 @@ $usuarios = $objConexion->query($sql1);
               			{
                			?>
                  		<option value="<?php echo $usuario->idUsuario?>">
-                 			<?php echo utf8_encode($usuario->NombresUsu)?>
+                 			<?php echo $usuario->idUsuario?><p> - </p><?php echo utf8_encode($usuario->NombresUsu)?>
                  			</option>  
             			<?php  
               			}		  
@@ -63,7 +63,7 @@ $usuarios = $objConexion->query($sql1);
               			{
                			?>
                  		<option value="<?php echo $tipo->idTipoServicio?>">
-                 			<?php echo utf8_encode($tipo->servNombre)?>
+                 			<?php echo $tipo->idTipoServicio?><p> - </p><?php echo utf8_encode($tipo->servNombre)?>
                  			</option>  
             			<?php  
               			}		  
@@ -79,7 +79,7 @@ $usuarios = $objConexion->query($sql1);
 
 			<div class="grupo">
 				<label>Numero de contacto</label><br>
-				<input type="text" name="telefono" id="telefono" required>
+				<input type="number" name="telefono" id="telefono" required>
 			</div>
 
 			<div class="grupo">
@@ -97,7 +97,7 @@ $usuarios = $objConexion->query($sql1);
               			{
                			?>
                  		<option value="<?php echo $estado->idEstadoServ?>">
-                 			<?php echo utf8_encode($estado->estadoServ)?>
+                 			<?php echo $estado->idEstadoServ?><p> - </p><?php echo utf8_encode($estado->estadoServ)?>
                  			</option>  
             			<?php  
               			}		  
