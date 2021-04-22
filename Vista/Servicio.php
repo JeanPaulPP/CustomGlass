@@ -5,10 +5,6 @@ if (!isset($_REQUEST['x']))
 ?>
 <?php  
 
-require "../Modelo/conexionBasesDatos.php";
-
-$objConexion = Conectarse();
-
 $sql1= "SELECT idUsuario, NombresUsu FROM usuario WHERE (Rol = 3)";
 
 $sql3="SELECT idTipoServicio, servNombre FROM tipo_servicio";

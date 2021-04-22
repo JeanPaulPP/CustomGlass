@@ -1,3 +1,8 @@
+<?php
+extract($_REQUEST);
+if (!isset($_REQUEST['x']))
+  $x=0;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,4 +49,13 @@
 	</div>
 	</center>
 </body>
+<?php
+
+if ($x==1)
+  echo "<script>alert('Se actualizaron correctamente los datos, por favor vuelva a iniciar sesion');</script>";
+if ($x==2)
+  echo "<script>alert('Por favor iniciar sesión');</script>";
+if ($x==3)
+  echo "<script>alert('Se ha cerrado la sesión');</script>";
+?>
 </html>

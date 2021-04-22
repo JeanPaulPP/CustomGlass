@@ -2,7 +2,7 @@
 session_start();
 extract ($_REQUEST);
 if (!isset($_SESSION['user']))
-	header("location:index.php?y=2");
+	header("location:../index.php?x=2");
 if (!isset($_REQUEST['pg']))
 	$pg="pgInicial";
 ?>
@@ -18,6 +18,9 @@ $usuarioNa = $usuarioN->fetch_object();
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,300&display=swap');
+</style>
 	<style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo&family=Lobster&family=Merriweather&display=swap');
 </style>
@@ -49,6 +52,12 @@ $usuarioNa = $usuarioN->fetch_object();
 	display: inline-block;
 	margin: 0;
 	padding: 0;
+	}
+	h1 {
+		font-family: 'Kanit', sans-serif;
+		color: #f37d4d;
+		text-shadow: 2px 2px 2px black;
+		text-decoration: underline;
 	}
 	#saludo {
 		position: relative;
@@ -326,7 +335,7 @@ tr:hover td{
 	<!--<li><a href="Principal.php?pg=eliminarServicioId">Eliminar Servicio por Id</a></li>-->
 </ul>
 </li>
-	<li><a id="opcion" href="../Controlador/salir.php">Cerrar Sesión</a></li><br>
+	<li><a id="opcion" href="../Controlador/salir.php?x=3">Cerrar Sesión</a></li><br>
 
 </div>
  <div id="divContenido" align="center">

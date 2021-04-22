@@ -1,4 +1,9 @@
 <?php
+extract($_REQUEST);
+if (!isset($_REQUEST['x']))
+  $x=0;
+?>
+<?php
 	$sql="SELECT u.idUsuario, u.Rol, u.CorreoUsuario, u.ContraUsuario, u.NombresUsu, r.nombreRol FROM usuario u, rol r WHERE (u.Rol = r.idRol) AND (u.CorreoUsuario = '$_SESSION[user]')";
 
 	$usuarioperfil = $objConexion->query($sql);
@@ -12,12 +17,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Mi perfil</title>
 </head>
 <body>
 <center>
 	<h1>Mi Perfil</h1>
-	<form id="form" method="post" action="../Controlador/#">
+	<form id="form" method="post" action="../Controlador/ValidarActUsuario.php">
 		<span class="grupo">
 					<label for="idUsuario">No. Identificación:</label><br>
 					<input type="text" readonly="readonly" name="idUsuario" id="idUsuario" required value="<?php echo $usuarioperfile->idUsuario ?>"><span class="barra"></span>
@@ -25,7 +30,7 @@
 				<br><br>
 				<span class="grupo">
 					<label for="idUsuario">Nombre:</label><br>
-					<input type="text" name="nombreUsuario" id="nombreUsuario" required value="<?php echo $usuarioperfile->NombresUsu ?>"><span class="barra"></span>
+					<input type="text" name="nombreUsuario" id="nombreUsuario" pattern="[A-Za-zÀ-ž\s]+" title="Solo texto, los valores numericos no son validos" required value="<?php echo $usuarioperfile->NombresUsu ?>"><span class="barra"></span>
 				</span>
 				<br><br>
 				<label for="rol">Rol:</label><br>
@@ -54,5 +59,12 @@
 				<button type="submit">Actualizar</button>
 	</form>
 </center>
+<?php
+
+if ($x==1)
+  echo "<script>alert('Se actualizaron correctamente los datos');</script>";
+if ($x==2)
+  echo "<script>alert('No se pudo actualizar los datos');</script>";
+?>
 </body>
 </html>
