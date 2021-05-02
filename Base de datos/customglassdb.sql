@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2020 a las 18:22:31
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.3
+-- Tiempo de generación: 03-05-2021 a las 00:16:56
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,7 +33,7 @@ CREATE TABLE `carrito_de_compras` (
   `Producto` int(10) UNSIGNED NOT NULL,
   `cantProducto` int(10) UNSIGNED NOT NULL,
   `fechaAgregado` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `carrito_de_compras`
@@ -61,8 +60,8 @@ CREATE TABLE `catalogo` (
   `Usuario` int(10) UNSIGNED NOT NULL,
   `fechaInicio` date NOT NULL,
   `fechaFinal` date NOT NULL,
-  `imagenProd` blob
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `imagenProd` blob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `catalogo`
@@ -83,15 +82,15 @@ INSERT INTO `catalogo` (`idCatalogo`, `Producto`, `Usuario`, `fechaInicio`, `fec
 
 CREATE TABLE `cliente` (
   `idCliente` int(10) UNSIGNED NOT NULL,
-  `EstadoCliente` int(10) UNSIGNED NOT NULL DEFAULT '1',
-  `correoClie` varchar(255) NOT NULL,
-  `contraClie` varchar(45) NOT NULL,
-  `direccion` varchar(45) DEFAULT NULL,
+  `EstadoCliente` int(10) UNSIGNED NOT NULL DEFAULT 1,
+  `correoClie` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `contraClie` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `direccion` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
   `Telefono` int(10) UNSIGNED DEFAULT NULL,
   `Telefono2` int(10) UNSIGNED DEFAULT NULL,
-  `Nombres` varchar(45) NOT NULL,
-  `Apellidos` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Nombres` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `Apellidos` varchar(45) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `cliente`
@@ -115,7 +114,7 @@ CREATE TABLE `detalle_factura` (
   `DetallePedido` int(10) UNSIGNED NOT NULL,
   `subtotal` float NOT NULL,
   `CostoIva` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `detalle_factura`
@@ -138,7 +137,7 @@ CREATE TABLE `detalle_pedido` (
   `costoPedido` int(10) UNSIGNED NOT NULL,
   `costoIVA` int(10) UNSIGNED NOT NULL,
   `CarritoCompras` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `detalle_pedido`
@@ -160,8 +159,8 @@ INSERT INTO `detalle_pedido` (`idDetallePed`, `Producto`, `CantidadPedido`, `cos
 
 CREATE TABLE `estado_cliente` (
   `idEstado` int(10) UNSIGNED NOT NULL,
-  `nombreEstado` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nombreEstado` varchar(45) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `estado_cliente`
@@ -181,8 +180,8 @@ INSERT INTO `estado_cliente` (`idEstado`, `nombreEstado`) VALUES
 
 CREATE TABLE `estado_pedido` (
   `idEstadoPed` int(10) UNSIGNED NOT NULL,
-  `estadoPed` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `estadoPed` varchar(45) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `estado_pedido`
@@ -201,8 +200,8 @@ INSERT INTO `estado_pedido` (`idEstadoPed`, `estadoPed`) VALUES
 
 CREATE TABLE `estado_producto` (
   `idEstadoProd` int(10) UNSIGNED NOT NULL,
-  `estadoProd` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `estadoProd` varchar(45) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `estado_producto`
@@ -221,8 +220,8 @@ INSERT INTO `estado_producto` (`idEstadoProd`, `estadoProd`) VALUES
 
 CREATE TABLE `estado_servicio` (
   `idEstadoServ` int(11) NOT NULL,
-  `estadoServ` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `estadoServ` varchar(45) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `estado_servicio`
@@ -243,7 +242,7 @@ CREATE TABLE `factura` (
   `DetalleFactura` int(10) UNSIGNED NOT NULL,
   `Usuario` int(10) UNSIGNED NOT NULL,
   `total` float UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `factura`
@@ -265,9 +264,9 @@ CREATE TABLE `pedido` (
   `DetallePedido` int(10) UNSIGNED NOT NULL,
   `Usuario` int(10) UNSIGNED NOT NULL,
   `Cliente` int(10) UNSIGNED NOT NULL,
-  `dirEntrega` varchar(45) NOT NULL,
+  `dirEntrega` varchar(45) CHARACTER SET latin1 NOT NULL,
   `fechaPed` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `pedido`
@@ -288,24 +287,53 @@ CREATE TABLE `producto` (
   `idProducto` int(10) UNSIGNED NOT NULL,
   `EstadoProducto` int(10) UNSIGNED NOT NULL,
   `TipoProducto` int(10) UNSIGNED NOT NULL,
-  `nombreProd` varchar(45) NOT NULL,
-  `medidasProd` varchar(255) DEFAULT NULL,
-  `materialProd` varchar(255) DEFAULT NULL,
+  `nombreProd` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `medidasProd` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `materialProd` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `costoUnitario` float NOT NULL,
   `IVA` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
 INSERT INTO `producto` (`idProducto`, `EstadoProducto`, `TipoProducto`, `nombreProd`, `medidasProd`, `materialProd`, `costoUnitario`, `IVA`) VALUES
-(456, 1, 2, 'bbbbb', 'aaaaa', 'aaaaxaaaa', 1, 1),
-(789, 3, 5, 'gggggg', 'ffffff', 'fffff', 1, 1),
-(915, 1, 4, 'vvvvv', 'cccc', 'ccccc', 1, 1),
-(3458, 2, 5, 'marco de ventana', '50cm*125cm', 'Aluminio', 50000, 9500),
+(3458, 2, 5, 'marcos de ventana', '50cm*125cm', 'Aluminio', 50000, 9500),
 (5672, 2, 6, 'Puerta exterior', '60 x 200 cm ', 'Aluminio', 139900, 26581),
 (7964, 3, 6, 'Puerta Milano Pardo', '80 x 235 cm ', 'Madera', 340900, 64771);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `IdProducto` int(4) NOT NULL,
+  `EstadoProducto` varchar(15) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `TipoProducto` varchar(30) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Producto` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Medidas` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Material` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `CostoUnitario` float NOT NULL,
+  `IVA` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`IdProducto`, `EstadoProducto`, `TipoProducto`, `Producto`, `Medidas`, `Material`, `CostoUnitario`, `IVA`) VALUES
+(1122, 'Fuera de produc', 'Vidrio', 'Vidrio laminado', '98 cm x 35,8 cm', 'LAMINAS DE VIDRIO', 212000, 40280),
+(1585, 'Fuera de produc', 'Puertas ', 'Marco de vidrio sencillo', '120 cm x 100 cm', 'ALUMINIO', 289900, 55081),
+(3561, 'Fuera de produc', 'Vidrio', 'Divisi?n oficina', '250 cm2  x 200 cm', 'ALUMINIO - VIDRIO', 982360, 186648),
+(4591, 'Agotado', 'Puertas ', 'Puertas interiores', '85 cm x 200 cm', 'ALUMINIO', 360950, 68580),
+(6157, 'Activo', 'Repisas', 'Repisa de alta calidad ', '45 cm ', 'VIDRIO - ALUMINIO ', 40890, 7769),
+(7536, 'Activo', 'Puertas ', 'Puerta exterior', '94 cm x 209 cm ', 'ALUMINIO', 360900, 68571),
+(8216, 'Agotado', 'Mesas ', 'vitrina ', '100 cm Alto, 200 cm Largo, 45 cm Anch ', 'VIDRIO - ALUMINIO ', 1100000, 209000),
+(8459, 'Activo', 'Puertas ', 'Puerta corrediza', '200 cm x 130 cm ', 'ALUMINIO - VIDRIO', 520320, 1000),
+(9734, 'Activo', 'Mesas ', 'comedor', '140 cm2', 'VIDRIO - ALUMINIO ', 1200000, 228000);
 
 -- --------------------------------------------------------
 
@@ -315,9 +343,9 @@ INSERT INTO `producto` (`idProducto`, `EstadoProducto`, `TipoProducto`, `nombreP
 
 CREATE TABLE `rol` (
   `idRol` int(10) UNSIGNED NOT NULL,
-  `nombreRol` varchar(45) NOT NULL,
-  `Funcion` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nombreRol` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `Funcion` varchar(255) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -338,11 +366,11 @@ CREATE TABLE `servicio` (
   `idServicio` int(10) UNSIGNED NOT NULL,
   `Usuario` int(10) UNSIGNED NOT NULL,
   `Servicio` int(45) NOT NULL,
-  `detServicio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `detServicio` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `Estado` int(10) UNSIGNED NOT NULL,
   `telefono` int(10) UNSIGNED DEFAULT NULL,
-  `imagenServ` blob
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `imagenServ` blob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `servicio`
@@ -360,7 +388,7 @@ INSERT INTO `servicio` (`idServicio`, `Usuario`, `Servicio`, `detServicio`, `Est
 CREATE TABLE `tipo_producto` (
   `idTipo` int(10) UNSIGNED NOT NULL,
   `tipoProd` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `tipo_producto`
@@ -383,8 +411,8 @@ INSERT INTO `tipo_producto` (`idTipo`, `tipoProd`) VALUES
 
 CREATE TABLE `tipo_servicio` (
   `idTipoServicio` int(11) NOT NULL,
-  `servNombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `servNombre` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `tipo_servicio`
@@ -404,17 +432,17 @@ INSERT INTO `tipo_servicio` (`idTipoServicio`, `servNombre`) VALUES
 CREATE TABLE `usuario` (
   `idUsuario` int(10) UNSIGNED NOT NULL,
   `Rol` int(10) UNSIGNED NOT NULL,
-  `CorreoUsuario` varchar(255) NOT NULL,
-  `ContraUsuario` varchar(45) NOT NULL,
-  `NombresUsu` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `CorreoUsuario` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `ContraUsuario` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `NombresUsu` varchar(45) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `Rol`, `CorreoUsuario`, `ContraUsuario`, `NombresUsu`) VALUES
-(1, 2, 'A@1', '1', 'A'),
+(1, 2, 'A@1.com', '12345678', 'Andres Escobar'),
 (3, 3, 'Miguel@mail.com', '123', 'Miguel'),
 (5, 2, 'B@1', '456', 'b'),
 (6, 2, 'B@2', '$2y$10$IpFp12eAiSF4jfsRKJqrMO06r2JLb094a2ropW', 'b'),
@@ -423,7 +451,8 @@ INSERT INTO `usuario` (`idUsuario`, `Rol`, `CorreoUsuario`, `ContraUsuario`, `No
 (915, 3, 'henry@mail.com', '123', 'Henry'),
 (9634, 3, 'F@mail.com', '123', 'F'),
 (52643208, 3, 'bairon@mail.com', '123', 'bairon'),
-(1001245659, 3, 'Juan12@mail.com', '123', 'bairon');
+(1001245659, 3, 'Juan12@mail.com', '123', 'bairon'),
+(1040702050, 3, 'Juan123@mail.com', '$2y$10$R6HiUi992xFbsjjaHPkVdexCb36Q6y5EIzVyxf', 'Juan Gomes');
 
 --
 -- Índices para tablas volcadas
@@ -445,7 +474,8 @@ ALTER TABLE `catalogo`
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idCliente`);
+  ADD PRIMARY KEY (`idCliente`),
+  ADD UNIQUE KEY `uc_cliente` (`idCliente`,`correoClie`);
 
 --
 -- Indices de la tabla `detalle_factura`
@@ -500,6 +530,12 @@ ALTER TABLE `pedido`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`idProducto`);
+
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`IdProducto`);
 
 --
 -- Indices de la tabla `rol`

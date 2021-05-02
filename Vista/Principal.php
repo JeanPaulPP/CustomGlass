@@ -242,7 +242,6 @@ form .grupo{
 	margin: 20px;
 }
 select{
-	border-radius: 10px;
 	width: 50%;
 	height: 30px;
 	font-size: 16px;
