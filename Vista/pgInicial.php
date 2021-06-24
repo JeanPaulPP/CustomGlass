@@ -6,8 +6,9 @@
 </head>
 
 <body>
-BIENVENIDO A CUSTOM GLASS
-<br><br>
-<li><a href="Principal.php?pg=pgInicial">Inicio</a></li>
-</body>
+<h1 class="inicio">Sobre nosotros</h1>
+<p class="texte">Somos una empresa que maneja aluminios y<br> vidrios al gusto y a la medida del cliente así<br> mismo se encarga de la producción de muebles <br> de dichos materiales.
+</p>
+<img id="AC" src="../Imagenes/AC.png">
+<img id="AC2" src="../Imagenes/AC2.png">
 </html>

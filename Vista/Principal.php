@@ -31,6 +31,9 @@ $usuarioNa = $usuarioN->fetch_object();
 	<style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 </style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+</style>
 	<style type="text/css">
 		body{
 	background: #ffffff;
@@ -58,6 +61,40 @@ $usuarioNa = $usuarioN->fetch_object();
 		color: #f37d4d;
 		text-shadow: 2px 2px 2px black;
 		text-decoration: underline;
+	}
+	.inicio {
+		position: relative;
+		display: inline-block;
+		top: 80px;
+		left: 520px;
+		font-family: 'Kanit', sans-serif;
+		color: #f37d4d;
+		text-shadow: 2px 2px 2px black;
+		text-decoration: none;
+	}
+	.texte{
+		position: absolute;
+		display: inline-block;
+		left: 500px;
+		top: 180px;
+		margin: 20px;
+		font-family: 'Lobster', cursive;
+		font-size: 20px;
+	}
+	#AC {
+		position: absolute;
+		top: 30px;
+		left: 40px;
+		width: 200px;
+		height: 400px;
+		margin: 10px;
+	}
+	#AC2 {
+		position: absolute;	
+		top: 40px;
+		left: 280px;
+		width: 200px;
+		height: 400px;
 	}
 	#saludo {
 		position: relative;
@@ -123,9 +160,9 @@ $usuarioNa = $usuarioN->fetch_object();
 	background-color: white;
   position:absolute;
   left:380px;
-  top:130px;
+  top:125px;
   width:968px;
-  height:500px;
+  height:480px;
   z-index:4;
   overflow:auto;
   border-radius: 10px;
@@ -296,6 +333,7 @@ tr:hover td{
 }
 
 	</style>
+	<meta charset="utf-8">
 </head>
 <body>
 	<div id="box">
@@ -337,7 +375,7 @@ tr:hover td{
 	<li><a id="opcion" href="../Controlador/salir.php?x=3">Cerrar Sesión</a></li><br>
 
 </div>
- <div id="divContenido" align="center">
+ <div id="divContenido">
         <?php include $pg.".php"; ?>
       </div>
 </div>

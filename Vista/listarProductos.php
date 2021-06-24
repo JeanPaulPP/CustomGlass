@@ -8,7 +8,6 @@
 <html>
 <head>
   <title>Listar Productos</title>
-  <meta charset="utf-8">
 </head>
 <body>
 <h1 align="center">PRODUCTOS</h1>
@@ -37,7 +36,7 @@
         <td><?php  echo  ($producto->costoUnitario)  ?></td>
         <td><?php  echo  ($producto->IVA)  ?></td> 
         <td><?php  echo  ($producto->tipoProd)  ?></td> 
-        <td><?php  echo  ($producto->estadoProd)  ?></td> 
+        <td><?php  echo  utf8_decode($producto->estadoProd)  ?></td> 
   </tr>
   <?php
   }
