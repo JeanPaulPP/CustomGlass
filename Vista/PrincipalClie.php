@@ -1,9 +1,26 @@
+<?php
+session_start();
+extract ($_REQUEST);
+if (!isset($_SESSION['user']))
+	header("location:InicioSesi.php?x=2");
+if (!isset($_REQUEST['pg']))
+	$pg="pgInicial";
+?>
+<?php
+require "../Modelo/conexionBasesDatos.php";
+$objConexion = Conectarse();
+$sqlusu="SELECT * FROM cliente WHERE (correoClie = '$_SESSION[user]')";
+$usuarioN = $objConexion->query($sqlusu);
+
+$usuarioNa = $usuarioN->fetch_object();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tipo Usuario</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../Estilos/selec.css">
+	<title>Custom Glass</title>
+	<link rel="stylesheet" type="text/css" href="../Estilos/principalClie.css">
 	<link rel="icon" type="image/x-icon" href="../Imagenes/icono.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;>
 	<style>
@@ -19,24 +36,22 @@
 			<li><a href="">Servicios</a></li>
 		</ul>
 		<ul>
-			<li><a href="selecPerfil.html">Iniciar Sesión</a></li>
+			<li><a href="PrincipalClie.php?pg=actualizarCliente">Actualizar Datos</a></li>
 		</ul>
 		<ul>
-			<li><a href="cliente.php">Registrarse</a></li>
+			<li><a href="PrincipalClie.php?pg=clientepass">Actualizar Contraseña</a></li>
 		</ul>
 		<ul>
-			<li><a href="../index.html">Inicio</a></li>
+			<li><a href="../Controlador/salirClie.php?x=3">Cerrar Sesion</a></li>
 		</ul>
 	</div>
-	<p id="tit">Seleccione el tipo de usuario con el que esta registrado</p>
 	<div id="contenedor">
 		<div id="contenedorf">
-			<br><br>
-			<button><a href="InicioSesi.php">Cliente</a></button><br><br>
-			<button><a href="InicioCliente.php">Administrador</a></button>
-		</div>
+        <?php include $pg.".php"; ?>
+      </div>
 	</div>
-	<footer>
+</div>
+<footer>
 	<div class="container-footer-all">
 		<div class="container-body">
 		<div class="colum1">

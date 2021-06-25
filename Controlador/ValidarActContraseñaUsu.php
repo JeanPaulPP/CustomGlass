@@ -10,14 +10,14 @@
 		if ("$_REQUEST[contraNueva]" == "$_REQUEST[contraNuevaC]") {
 			$update = $objConexion->query("UPDATE usuario SET ContraUsuario = '$_REQUEST[contraNueva]' WHERE (CorreoUsuario = '$_SESSION[user]')");
 				if ($update) {
-					echo "<script>alert('Se ha actualizado la contraseña');</script>";
+					header("location:../Controlador/salir.php?x=4");
 				}
 		}
 		else {
-			echo "<script>alert('Las dos contraseñas nuevas no coinciden');</script>";
+			header("location:../Vista/Principal.php?pg=usuariopass&x=2");
 		}
 	}
 	else {
-		echo "<script>alert('La contraseña actual no coincide');</script>";
+		header("location:../Vista/Principal.php?pg=usuariopass&x=3");
 	}
 ?>

@@ -8,7 +8,7 @@ $sql="UPDATE usuario SET Rol= '$_REQUEST[Rol]', CorreoUsuario = '$_REQUEST[corre
 $resultado=$objConexion->query($sql);
 
 if ($resultado)
-	header("location:../Controlador/salir.php?x=1");
+	header("location:../Controlador/salir.php?x=4");
 else
 	header("location:../Vista/Principal.php?pg=usuario&x=2");
 

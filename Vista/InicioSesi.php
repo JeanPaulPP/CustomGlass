@@ -1,24 +1,30 @@
+<?php
+extract($_REQUEST);
+if (!isset($_REQUEST['x']))
+	$x=0;
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tipo Usuario</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../Estilos/selec.css">
+	<title>Inicio de Sesión</title>
+	<link rel="stylesheet" type="text/css" href="../Estilos/inisesion.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;>
 	<link rel="icon" type="image/x-icon" href="../Imagenes/icono.ico" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;>
 	<style>
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 </style>
+
 </head>
 <body>
 	<div id="barra">
 		<ul>
 			<li><a href="">Productos</a></li>
 		</ul>
-		<ul>
+		<ul>	
 			<li><a href="">Servicios</a></li>
 		</ul>
-		<ul>
+		<ul>	
 			<li><a href="selecPerfil.html">Iniciar Sesión</a></li>
 		</ul>
 		<ul>
@@ -28,15 +34,27 @@
 			<li><a href="../index.html">Inicio</a></li>
 		</ul>
 	</div>
-	<p id="tit">Seleccione el tipo de usuario con el que esta registrado</p>
 	<div id="contenedor">
-		<div id="contenedorf">
-			<br><br>
-			<button><a href="InicioSesi.php">Cliente</a></button><br><br>
-			<button><a href="InicioCliente.php">Administrador</a></button>
+	<center>
+	<form action="../Controlador/verificarCliente.php" method="POST" id="Form">
+		<div id="Form">
+			<h1>Inicio de Sesión</h1>
+			<div class="grupo">
+				<input type="email" name="correo" id="correo" required><span class="barra"></span>
+				<label>Correo</label>
+			</div>
+
+			<div class="grupo">
+				<input type="password" name="contraseña" id="contraseña" required><span class="barra"></span>
+				<label>Contraseña</label>
+			</div>
+
+			<button type="submit">Ingresar</button>
 		</div>
-	</div>
-	<footer>
+	</form>
+</center>
+</div>
+<footer>
 	<div class="container-footer-all">
 		<div class="container-body">
 		<div class="colum1">
@@ -91,5 +109,20 @@
 		</div>
 	</div>
 </footer>
+<script type="text/javascript">
+	window.location('InicioCliente.php').reload;
+</script>
+	<?php
+
+if ($x==1)
+	echo "<script>alert('Usuario no registrado o los datos ingresados son incorrectos, intente de nuevo');</script>";
+if ($x==2)
+	echo "<script>alert('Debe iniciar sesion para acceder al sistema');</script>";
+if ($x==3)
+	echo "<script>alert('El usuario ha cerrado sesión');</script>";
+if ($x==4) {
+	echo "<script>alert('Se actualizaron correctamente los datos, por favor vuelva a iniciar sesion');</script>";
+}
+?>
 </body>
 </html>

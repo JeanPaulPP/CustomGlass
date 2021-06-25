@@ -21,8 +21,8 @@ if (!isset($_REQUEST['x']))
 </head>
 <body>
 <center>
-	<h1>Mi Perfil</h1>
 	<form id="form" method="post" action="../Controlador/ValidarActUsuario.php">
+		<h1>Mi Perfil</h1>
 		<span class="grupo">
 					<label for="idUsuario">No. Identificación:</label><br>
 					<input type="text" readonly="readonly" name="idUsuario" id="idUsuario" required value="<?php echo $usuarioperfile->idUsuario ?>"><span class="barra"></span>

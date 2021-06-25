@@ -60,14 +60,14 @@ $usuarioNa = $usuarioN->fetch_object();
 	<!--<li><a href="Principal.php?pg=eliminarProductoId">Eliminar producto por Id</a></li>-->
 </ul>
 </li>
-<li id="titulo">Clientes
+<!--<li id="titulo">Clientes
 	<ul>
 	<li><a id="opcion" href="Principal.php?pg=cliente">Agregar Cliente</a></li><br>
 	<li><a id="opcion" href="Principal.php?pg=listarClientes">Listar clientes</a></li><br>
 	<li><a id="opcion" href="Principal.php?pg=actualizarIdCliente">Actualizar cliente por Id</a></li><br>
-	<!--<li><a href="Principal.php?pg=eliminarClienteId">Eliminar Cliente por Id</a></li>-->
+	<li><a href="Principal.php?pg=eliminarClienteId">Eliminar Cliente por Id</a></li>
 </ul>
-</li>
+</li>-->
 <li id="titulo">Servicios
 	<ul>
 	<li><a id="opcion" href="Principal.php?pg=Servicio">Agregar Servicio</a></li><br>

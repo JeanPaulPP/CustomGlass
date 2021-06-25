@@ -28,7 +28,7 @@ if (!isset($_REQUEST['x']))
 			<li><a href="selecPerfil.html">Iniciar Sesión</a></li>
 		</ul>
 		<ul>
-			<li><a href="RegistroUsuario.php">Registrarse</a></li>
+			<li><a href="cliente.php">Registrarse</a></li>
 		</ul>
 		<ul>
 			<li><a href="../index.html">Inicio</a></li>

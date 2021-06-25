@@ -10,7 +10,7 @@ if (!isset($_REQUEST['x']))
 </head>
 <body>
 	<center>
-		<form action="principalClie.php?pg=../Controlador/ValidarActContraseñaUsu" method="POST">
+		<form action="PrincipalClie.php?pg=../Controlador/ValidarActContraseñaClie" method="POST">
 			<div class="grupo">
 				<label>Contraseña Actual</label><br>
 				<input type="password" name="contraActual" id="contraActual" title="Minimo 8 caracteres" required>

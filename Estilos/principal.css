@@ -16,7 +16,7 @@ body{
 	margin: 0;
 	padding: 0;
 	}
-	h1 {
+	form h1 {
 		font-family: 'Kanit', sans-serif;
 		color: #f37d4d;
 		text-shadow: 2px 2px 2px black;
@@ -192,34 +192,6 @@ body{
 	padding: 0;
 }
 
-form button{
-	background: -webkit-linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
-	background: linear-gradient(to right, #BEBEBE, #6288FF, #62A5FF, #1951FF);
-	border: none;
-	color: #FFFFFF;
-	display: block;
-	width: 80%;
-	margin: 10px auto; 
-	height: 40px;
-	font-size: 16px;
-	cursor: pointer;
-	border-bottom:1px solid var(--colorTextos)
-	border-radius: 5px;
-}
-form input{
-	font-size: 15px;
-	width: 50%;	
-}
-
-form input:focus{
-	outline-color: #6D7074;
-	color: #5E5D5D;
-}
-form h1{
-	text-align: center;
-	font-weight: 700;
-}
-
 form{
 	background: #ffffff;
 	padding: 40px 0;
@@ -236,35 +208,59 @@ form .grupo{
 	position: relative;
 	margin: 20px;
 }
-form select{
-	width: 50%;
-	height: 30px;
+
+input{
+	width: 78%;
+	font-size: 15px;
 	font-size: 16px;
 	color: #5E5D5D;
-
-}
-
-form select:focus{
-	outline: none;
-}
-
-textarea{
-	color: #c6c6c6;
-	font-size: 15px;
 	border-radius: 10px;
-	width: 100%
+
 }
 
-textarea:focus{
-	outline: none;
+input:focus{
+	outline-color: #6D7074;
 	color: #5E5D5D;
 }
+
+
 label{
 	color: var(--colorTextos);
 	font-size: 20px;
 	transition: 0.5s ease-in-out all;
 	pointer-events: none;
 }
+
+button{
+	background: #202020;
+	border: none;
+	color: #FFFFFF;
+	display: block;
+	width: 80%;
+	margin: 10px auto; 
+	height: 40px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+button:hover {
+	background: #101010;
+	text-decoration: underline;
+	 }
+
+
+select{
+	border-radius: 10px;
+	width: 80%;
+	height: 30px;
+	font-size: 16px;
+	color: #5E5D5D;
+}
+
+select:focus{
+	outline: none;
+}
+
 :root{
 	--colorTextos:#6D7074;
 } 
