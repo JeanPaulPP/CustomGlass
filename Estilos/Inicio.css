@@ -170,6 +170,37 @@ body{
 	width: 100%;
 	height: 360px;
 }
+
+#barra {
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	top: 0;
+	margin: 0;
+	width: 100%;
+	height: 110px;
+	background: #202020;
+}
+#barra a {
+	color: #C7C7C7;
+	font-family: sans-serif;
+	text-decoration: none;
+	font-size: 18px;
+	padding: 20px;
+	display: inline-block;
+}
+#barra li a:hover{
+	background: #101010;
+	text-decoration: underline;
+}
+#barra li {
+	padding: 20px;
+	display: inline-block;
+}
+#barra ul {
+	margin: 0;
+	display: inline-block;
+}
 footer {
 	margin: 0;
 	padding: 0;
@@ -279,31 +310,15 @@ footer {
 		margin-top: 40px;
 	}
 }
-#barra {
-	text-align: right;
-	position: relative;
-	top: 0;
-	margin: 0;
-	width: 100%;
-	height: 110px;
-	background: #202020;
-}
-#barra li a {
-	color: #C7C7C7;
-	font-family: sans-serif;
-	text-decoration: none;
-	font-size: 18px;
-	padding: 20px;
-	display: block;
-}
-#barra li a:hover{
-	background: #101010;
-	text-decoration: underline;
-}
-#barra li {
-	padding: 20px;
-	display: inline-block;
-}
-#barra ul {
-	margin: 0;
+@media screen and (max-width: 767px) {
+	#barra li {
+		display: block;
+	}
+	#barra ul {
+		display: block;
+	}
+	#barra {
+		text-align: center;
+		height: 560px;
+	}
 }
