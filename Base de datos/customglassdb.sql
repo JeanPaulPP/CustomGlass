@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2021 a las 00:16:56
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.2
+-- Tiempo de generación: 28-06-2021 a las 17:48:54
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,8 +58,7 @@ CREATE TABLE `catalogo` (
   `idCatalogo` int(10) UNSIGNED NOT NULL,
   `Producto` int(10) UNSIGNED NOT NULL,
   `Usuario` int(10) UNSIGNED NOT NULL,
-  `fechaInicio` date NOT NULL,
-  `fechaFinal` date NOT NULL,
+  `fechaPublicacion` date NOT NULL,
   `imagenProd` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -67,12 +66,12 @@ CREATE TABLE `catalogo` (
 -- Volcado de datos para la tabla `catalogo`
 --
 
-INSERT INTO `catalogo` (`idCatalogo`, `Producto`, `Usuario`, `fechaInicio`, `fechaFinal`, `imagenProd`) VALUES
-(4796, 1230, 4, '2019-05-03', '2019-05-08', NULL),
-(4796, 1975, 4, '2019-05-03', '2019-05-08', NULL),
-(4796, 3458, 4, '2019-05-03', '2019-05-08', NULL),
-(4796, 5672, 5, '2019-05-15', '2019-05-20', NULL),
-(4796, 7964, 5, '2019-05-22', '2019-06-04', NULL);
+INSERT INTO `catalogo` (`idCatalogo`, `Producto`, `Usuario`, `fechaPublicacion`, `imagenProd`) VALUES
+(4796, 1230, 4, '2019-05-03', NULL),
+(4796, 1975, 4, '2019-05-03', NULL),
+(4796, 3458, 4, '2019-05-03', NULL),
+(4796, 5672, 5, '2019-05-15', NULL),
+(4796, 7964, 5, '2019-05-22', NULL);
 
 -- --------------------------------------------------------
 
@@ -83,13 +82,13 @@ INSERT INTO `catalogo` (`idCatalogo`, `Producto`, `Usuario`, `fechaInicio`, `fec
 CREATE TABLE `cliente` (
   `idCliente` int(10) UNSIGNED NOT NULL,
   `EstadoCliente` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `correoClie` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `contraClie` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `direccion` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
+  `correoClie` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `contraClie` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `Telefono` int(10) UNSIGNED DEFAULT NULL,
   `Telefono2` int(10) UNSIGNED DEFAULT NULL,
-  `Nombres` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `Apellidos` varchar(45) CHARACTER SET latin1 NOT NULL
+  `Nombres` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `Apellidos` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -99,9 +98,10 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`idCliente`, `EstadoCliente`, `correoClie`, `contraClie`, `direccion`, `Telefono`, `Telefono2`, `Nombres`, `Apellidos`) VALUES
 (1000133546, 1, 'juanca0978@hotmail.com', 'juan9852', 'Calle 45 No 53B-11', 7325462, 3164544626, 'Juan Camilo', 'Cerdas Cardenas'),
 (1000145338, 3, 'jcamilo23@hotmail.com', 'janerc09', 'cll58 I 78 sur', NULL, 3205782698, 'Janer Camilo', 'Borrero Tuberquia'),
-(1013672970, 2, 'djeisson@hotmail.com', 'dario0620', 'Crr78B#58I58', 3367899, 3182467237, 'Jeisson Dario', 'Rodríguez Portillo'),
+(1000335347, 1, 'jpatinopineros@gmail.com', '12345678', 'NULL', 3046015140, 0, 'Jean Paul', 'Patiño Piñeros'),
+(1013672970, 2, 'djeisson@hotmail.com', 'dario0620', 'Crr78B#58I58', 3367899, 3182467237, 'Jeisson Dario', 'Rodr?guez Portillo'),
 (1014987534, 3, 'jperez@hotmail.com', 'juanitop05', 'cra 16 #20', 6025749, NULL, 'Juan', 'Perez Ortiz'),
-(2410857460, 2, 'fromero@hotmail.com', 'Fernando0523', 'cra 65K #70 sur', 315780526, NULL, 'Fernando Andrés', 'Romero vargas');
+(2410857460, 2, 'fromero@hotmail.com', 'Fernando0523', 'cra 65K #70 sur', 315780526, NULL, 'Fernando Andr?s', 'Romero vargas');
 
 -- --------------------------------------------------------
 
@@ -133,7 +133,6 @@ INSERT INTO `detalle_factura` (`idDetalleFac`, `DetallePedido`, `subtotal`, `Cos
 CREATE TABLE `detalle_pedido` (
   `idDetallePed` int(10) UNSIGNED NOT NULL,
   `Producto` int(10) UNSIGNED NOT NULL,
-  `CantidadPedido` int(10) UNSIGNED DEFAULT NULL,
   `costoPedido` int(10) UNSIGNED NOT NULL,
   `costoIVA` int(10) UNSIGNED NOT NULL,
   `CarritoCompras` int(10) UNSIGNED DEFAULT NULL
@@ -143,13 +142,13 @@ CREATE TABLE `detalle_pedido` (
 -- Volcado de datos para la tabla `detalle_pedido`
 --
 
-INSERT INTO `detalle_pedido` (`idDetallePed`, `Producto`, `CantidadPedido`, `costoPedido`, `costoIVA`, `CarritoCompras`) VALUES
-(2569, 1975, 2, 980000, 186200, 4589),
-(2569, 3458, 4, 200000, 38000, 4589),
-(2569, 7964, 4, 1363600, 259084, 4589),
-(8642, 1975, 3, 1470000, 279300, NULL),
-(9821, 1230, 1, 100000, 19000, 8671),
-(9821, 5672, 1, 139900, 26581, 8671);
+INSERT INTO `detalle_pedido` (`idDetallePed`, `Producto`, `costoPedido`, `costoIVA`, `CarritoCompras`) VALUES
+(2569, 1975, 980000, 186200, 4589),
+(2569, 3458, 200000, 38000, 4589),
+(2569, 7964, 1363600, 259084, 4589),
+(8642, 1975, 1470000, 279300, NULL),
+(9821, 1230, 100000, 19000, 8671),
+(9821, 5672, 139900, 26581, 8671);
 
 -- --------------------------------------------------------
 
@@ -200,7 +199,7 @@ INSERT INTO `estado_pedido` (`idEstadoPed`, `estadoPed`) VALUES
 
 CREATE TABLE `estado_producto` (
   `idEstadoProd` int(10) UNSIGNED NOT NULL,
-  `estadoProd` varchar(45) CHARACTER SET latin1 NOT NULL
+  `estadoProd` varchar(45) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -366,10 +365,10 @@ CREATE TABLE `servicio` (
   `idServicio` int(10) UNSIGNED NOT NULL,
   `Usuario` int(10) UNSIGNED NOT NULL,
   `Servicio` int(45) NOT NULL,
-  `detServicio` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `detServicio` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `Estado` int(10) UNSIGNED NOT NULL,
   `telefono` int(10) UNSIGNED DEFAULT NULL,
-  `imagenServ` blob DEFAULT NULL
+  `imagenServ` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
@@ -377,7 +376,9 @@ CREATE TABLE `servicio` (
 --
 
 INSERT INTO `servicio` (`idServicio`, `Usuario`, `Servicio`, `detServicio`, `Estado`, `telefono`, `imagenServ`) VALUES
-(12, 3, 1, 'Instalar ventanas', 1, 72111000, 0x76696472696f2d74656d706c61646f2e6a7067);
+(12349, 741, 1, 'Ã±,ll,l', 1, 123456, 0x2e2e2f496d6167656e65732f6a70672d76732d6a7065672e6a7067),
+(12350, 9634, 2, 'swdw484', 2, 89794546, 0x2e2e2f536572766963696f73496d672f4d696e64204d61702e6a7067),
+(12351, 9634, 3, 'El trabajador se dirige directamente a su hogar o lugar donde solicite el servicio y realiza la toma de medidas y facturaciÃ³n del trabajo', 1, 526444789, 0x2e2e2f536572766963696f73496d672f64657363617267612e6a7067);
 
 -- --------------------------------------------------------
 
@@ -612,7 +613,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `idServicio` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idServicio` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12352;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_producto`
