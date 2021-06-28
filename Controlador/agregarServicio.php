@@ -1,10 +1,13 @@
 <?php
 require "../Modelo/conexionBasesDatos.php";
 require "../Modelo/claseServicio.php";
-extract ($_REQUEST);
+$imagen = $_FILES['imagenServ']['name'];
+$ruta = $_FILES['imagenServ']['tmp_name'];
+$destino = "../ServiciosImg/".$imagen;
+copy($ruta, $destino);
 $objServicio = new servicio();
 
-$objServicio->crearServicio($_REQUEST['Usuario'] , $_REQUEST['Servicio'], $_REQUEST['detServicio'], $_REQUEST['Estado'],   $_REQUEST['telefono'],$_REQUEST['imagenServ']);
+$objServicio->crearServicio($_REQUEST['Usuario'] , $_REQUEST['Servicio'], $_REQUEST['detServicio'], $_REQUEST['Estado'],   $_REQUEST['telefono'], $destino);
 
 $resultado = $objServicio->registrarServicio();
 

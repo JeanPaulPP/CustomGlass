@@ -36,7 +36,7 @@
         <td><?php  echo  utf8_encode($servicio->NombresUsu)  ?></td>
         <td><?php  echo  utf8_encode($servicio->estadoServ)  ?></td>
         <td><?php  echo  utf8_encode($servicio->telefono)  ?></td> 
-        <td ><?php  echo "<img src='../Imagenes/$imagen' width='320px' height='240px'>" ?></td> 
+        <td ><?php  echo "<img src='$servicio->imagenServ' width='320px' height='240px'>" ?></td> 
   </tr>
   <?php
   }
@@ -45,6 +45,5 @@
 </table>
 <center>
 <br><br>
-  <a href="Principal.php">Volver</a>
 </center>
 </body>

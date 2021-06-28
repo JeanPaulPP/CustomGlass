@@ -25,7 +25,8 @@ $usuarios = $objConexion->query($sql1);
 	<!--<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">-->
 </head>
 <body>
-	<form action="../Controlador/agregarServicio.php" id="Form">
+	<center>
+	<form action="../Controlador/agregarServicio.php" method="POST" id="Form" enctype="multipart/form-data">
 		<div id="Form">
 			<h1>Servicio</h1>
 			<div class="grupo">
@@ -105,6 +106,7 @@ $usuarios = $objConexion->query($sql1);
 			<button type="submit">Registrar</button>
 		</div>
 	</form>
+</center>
 	<?php 
 	if ($x==1)
   echo "<script>alert('Se ha agregado el servicio correctamente');</script>";

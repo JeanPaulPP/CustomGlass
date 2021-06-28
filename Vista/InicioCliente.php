@@ -22,7 +22,7 @@ if (!isset($_REQUEST['x']))
 			<li><a href="">Productos</a></li>
 		</ul>
 		<ul>	
-			<li><a href="">Servicios</a></li>
+			<li><a href="catalogoServ.php">Servicios</a></li>
 		</ul>
 		<ul>	
 			<li><a href="selecPerfil.html">Iniciar Sesión</a></li>
