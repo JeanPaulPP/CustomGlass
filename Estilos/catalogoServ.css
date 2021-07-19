@@ -8,17 +8,6 @@ body{
 	margin: 0;
 	animation: fanimation 10s infinite;
 }
-@keyframes fanimation {
-	0%{
-		background-position: 0% 50%;
-	}
-	50%{
-		background-position: 100% 50%;
-	}
-	100%{
-		background-position: 0% 50%;
-	}
-}
 #barra {
 	justify-content: center;
 	text-align: center;
@@ -58,15 +47,26 @@ body{
 	display: flex;
 	position: relative;
 	top: 30px;
-	left: 140px;
+	left: 280px;
 	background: #ffffff;
 	padding: 40px 0;
 	box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
 	border-radius: 10px;
 	height: 70%;
-	width: 80%; 
+	width: 60%; 
 	overflow: auto;
 	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#contenedorfa {
+	display: flex;
+	background: #ffffff;
+	padding: 40px 0;
+	box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	height: 100%;
+	width: 100%; 
 	justify-content: center;
 }
 footer {
@@ -233,4 +233,27 @@ h1 {
 	color: blue;
 	font-family: monospace;
 	font-size: 14px;
+}
+#card button{
+	background: #202020;
+	border: none;
+	color: #FFFFFF;
+	display: block;
+	width: 100%;
+	margin: 10px auto; 
+	height: 40px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+#card button a {
+	color: #C7C7C7;
+	font-family: sans-serif;
+	text-decoration: none;
+	font-size: 18px;
+	padding: 20px;
+}
+#card button:hover {
+	background: #101010;
+	text-decoration: underline;
 }

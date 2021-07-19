@@ -68,6 +68,7 @@ $usuarioNa = $usuarioN->fetch_object();
 	<li><a href="Principal.php?pg=eliminarClienteId">Eliminar Cliente por Id</a></li>
 </ul>
 </li>-->
+<li><a id="opcion" href="Principal.php?pg=productoCat">Añadir producto al catálogo</a></li>
 <li id="titulo">Servicios
 	<ul>
 	<li><a id="opcion" href="Principal.php?pg=Servicio">Agregar Servicio</a></li><br>

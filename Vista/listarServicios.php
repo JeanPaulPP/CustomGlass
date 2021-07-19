@@ -1,7 +1,7 @@
 <?php
   require "../Modelo/claseServicio.php";
   $objServicios = new servicio();
-  $servicios= $objServicios->consultarServicios();
+  $servicios= $objServicios->consultarServiciosL();
 ?>
 <!DOCTYPE html>
 <html>

@@ -89,7 +89,15 @@
 		public function consultarServicios()
 		{
 		$this->Conexion=Conectarse();
-		 $sql="SELECT s.idServicio, s.detServicio, s.telefono, s.imagenServ, u.NombresUsu, es.estadoServ, ts.servNombre FROM servicio s, usuario u, estado_servicio es, tipo_servicio ts WHERE (s.Usuario = u.idUsuario) AND (s.Servicio = ts.idTipoServicio) AND (s.Estado = es.idEstadoServ) ";
+		 $sql="SELECT s.idServicio, s.detServicio, s.telefono, s.imagenServ, u.NombresUsu, es.estadoServ, ts.servNombre FROM servicio s, usuario u, estado_servicio es, tipo_servicio ts WHERE (s.Usuario = u.idUsuario) AND (s.Servicio = ts.idTipoServicio) AND (s.Estado = es.idEstadoServ) AND (s.Estado = 1) ";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
+		}
+		public function consultarServiciosL()
+		{
+		$this->Conexion=Conectarse();
+		 $sql="SELECT s.idServicio, s.detServicio, s.telefono, s.imagenServ, u.NombresUsu, es.estadoServ, ts.servNombre FROM servicio s, usuario u, estado_servicio es, tipo_servicio ts WHERE (s.Usuario = u.idUsuario) AND (s.Servicio = ts.idTipoServicio) AND (s.Estado = es.idEstadoServ)";
 		$resultado=$this->Conexion->query($sql);
 		$this->Conexion->close();
 		return $resultado;	

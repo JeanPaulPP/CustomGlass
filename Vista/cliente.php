@@ -26,10 +26,10 @@ $estados = $objConexion->query($sql1);
 	
 	<div id="barra">
 		<ul>
-			<li><a href="">Productos</a></li>
+			<li><a href="catalogoProd.php">Productos</a></li>
 		</ul>
 		<ul>	
-			<li><a href="">Servicios</a></li>
+			<li><a href="catalogoServ.php">Servicios</a></li>
 		</ul>
 		<ul>	
 			<li><a href="selecPerfil.html">Iniciar Sesión</a></li>
@@ -131,6 +131,8 @@ $estados = $objConexion->query($sql1);
   echo "<script>alert('Se ha registrado el cliente correctamente, por favor inicie sesión con los datos registrados');</script>";
 if ($x==2)
   echo "<script>alert('No se pudo registrar el cliente');</script>";
+if ($x==3) 
+	echo "<script>alert('Para esta función debes acceder al sistema, por favor registrate si no tienes un usuario, de lo contrario inicia sesion con los datos que estes registrado.')</script>"
 ?>
 </center>
 </div>

@@ -1,8 +1,8 @@
 <?php
 require "../Modelo/conexionBasesDatos.php";
-  require "../Modelo/claseServicio.php";
-  $objServicios = new servicio();
-  $servicios= $objServicios->consultarServicios();
+  require "../Modelo/claseCatalogoProd.php";
+  $objProductos = new catalogo();
+  $productos= $objProductos->consultarServicios();
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,21 +37,27 @@ require "../Modelo/conexionBasesDatos.php";
       <li><a href="../index.html">Inicio</a></li>
     </ul>
   </div>
-<h1 align="center">Servicios</h1>
+<h1 align="center">Productos</h1>
 <div id="contenedor">
   <div id="contenedorf">
     <center>
 
   <?php
-  while ($servicio = $servicios->fetch_object())
+  while ($producto = $productos->fetch_object())
   {
    
   ?>
   <div id="card">
-     <img src='<?php echo $servicio->imagenServ; ?>' width='340px' height='220px'>
-       <h4><?php  echo  utf8_encode($servicio->servNombre)  ?></h4>
-        <p id="info"><?php  echo  utf8_encode($servicio->detServicio) ?> </p>
-        <p id="tel">Más información al: <br><?php  echo  utf8_encode($servicio->telefono)  ?></p>
+     <img src='<?php echo $producto->imagenProd; ?>' width='340px' height='220px'>
+       <h4><?php  echo  utf8_encode($producto->nombreProd)  ?></h4>
+        <p id="info"><?php  echo  utf8_encode($producto->medidasProd) ?> </p>
+        <p id="info"><?php  echo  utf8_encode($producto->materialProd) ?> </p>
+        <?php $costo = $producto->costoUnitario;
+          $IVA = $producto->IVA;
+          $total = $costo + $IVA;
+         ?>
+        <p id="tel">$ <?php  echo  utf8_encode($total)  ?></p>
+        <button><a href="cliente.php?x=3">Comprar</a></button>
         </div>
   
   <?php
@@ -117,3 +123,4 @@ require "../Modelo/conexionBasesDatos.php";
   </div>
 </footer>
 </body>
+</html>

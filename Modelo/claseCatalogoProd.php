@@ -1,53 +1,66 @@
-<?php
-	class catalogoProd extends producto
+<?php 
+	class catalogo
 	{
-		protected $idCatalogo;
+		protected $idCatalogo ;
+		protected $Producto ;
+		protected $Usuario ;
+		protected $fechaPublicacion ;
+		protected $imagenProd ;
 
-		public function catalogoServ($idProducto,$nombreProducto)
+		public function servicio (){
+
+		}
+		public function getIdCatalogo (){
+			return$this->$idCatalogo ;
+		}
+		public function getProducto (){
+			return$this->$Producto ;
+		}
+		public function getUsuario (){
+			return$this->$Usuario ;
+		}
+		public function getFechaPublicacion (){
+			return$this->$fechaPublicacion ;
+		}
+		public function getImagenProd (){
+			return$this->$imagenProd ;
+		}
+		public function setIdCatalogo ($newVal){
+			$this->idCatalogo  = $newVal;	
+		}
+		public function setProducto ($newVal){
+			$this->Producto  = $newVal;	
+		}
+		public function setUsuario ($newVal){
+			$this->Usuario  = $newVal;	
+		}
+		public function setFechaPublicacion ($newVal){
+			$this->fechaPublicacion  = $newVal;	
+		}
+		public function setImagenProd ($newVal){
+			$this->imagenProd  = $newVal;	
+		}
+		public function crearCatalogo ($idCatalogo, $Producto, $Usuario, $fechaPublicacion, $imagenProd){
+			$this-> idCatalogo = $idCatalogo ;
+			$this-> Producto = $Producto ;
+			$this-> Usuario = $Usuario ;
+			$this-> fechaPublicacion = $fechaPublicacion ;
+			$this-> imagenProd = $imagenProd ;
+		}
+		public function registrarCatalogo(){
+			$this->Conexion=Conectarse();
+			$sql="INSERT INTO catalogo (idCatalogo, Producto, Usuario, fechaPublicacion, imagenProd) VALUES ('$this->idCatalogo', '$this->Producto', '$this->Usuario', '$this->fechaPublicacion', '$this->imagenProd')";
+			$resultado = $this->Conexion->query($sql);
+			return $resultado;
+		}
+		public function consultarServicios()
 		{
-			parent::_construct($idProducto,$nombreProducto)
+		$this->Conexion=Conectarse();
+		 $sql="SELECT p.idProducto, p.nombreProd, p.medidasProd, p.materialProd, p.costoUnitario, p.IVA, c.imagenProd FROM producto p, catalogo c WHERE c.Producto = p.idProducto AND p.EstadoProducto = 2";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
 		}
 
-		public function getIdProducto ()
-		{
-			return$this->$idProducto
-		}
-		public function getNombreProducto ()
-		{
-			return$this->$nombreProducto
-		}
-		public function getDetalleProducto ()
-		{
-			return$this->$detalleProducto
-		}
-		public function getEstadoProducto ()
-		{
-			return$this->$estadoProducto
-		}
-		public function getCostoUnitario ()
-		{
-			return$this->$costoUnitario
-		}
-
-		public function getIdCatalogo ()
-		{
-			return $this->$idCatalogo;
-		}
-		public function setIdCatalogo ($newVal)
-		{
-			$this->idCatalogo = $newVal;
-		}
-			public function filtrarInformacion($filtrarInformacion)
-		{
-		//aquí el código del método
-		}
-			public function ordenarInformacion($ordenarInformacion)
-		{
-		//aquí el código del método
-		}
-			public function informar($informar)
-		{
-		//aquí el código del método
-		}
 	}
 ?>

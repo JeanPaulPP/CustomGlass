@@ -30,10 +30,10 @@ $usuarioNa = $usuarioN->fetch_object();
 <body>
 	<div id="barra">
 		<ul>
-			<li><a href="">Productos</a></li>
+			<li><a href="PrincipalClie.php?pg=catalogoProdClie">Productos</a></li>
 		</ul>
 		<ul>
-			<li><a href="">Servicios</a></li>
+			<li><a href="PrincipalClie.php?pg=catalogoServClie">Servicios</a></li>
 		</ul>
 		<ul>
 			<li><a href="PrincipalClie.php?pg=actualizarCliente">Actualizar Datos</a></li>

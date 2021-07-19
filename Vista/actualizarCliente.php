@@ -17,7 +17,8 @@ $estados = $objConexion->query($sql2);
 	<meta charset="utf-8">
 </head>
 <body>
-	<h2>Actualizar Datos</h2>
+	<center>
+	<h1 align="center">Actualizar Datos</h1>
 	<form id="form" method="post" action="../Controlador/ValidarActCliente.php">
 		<span class="grupo">
 					<label for="idCliente">No. Identificación Cliente:</label><br>
@@ -58,27 +59,9 @@ $estados = $objConexion->query($sql2);
 					<label for="telefono2">2. Telefono :</label><br>
 					<input type="number" name="telefono2" id="telefono2" value="<?php echo utf8_encode($cliente->Telefono2) ?>"><span class="barra"></span>
 				</span>
-
-				<br><br>
-				<label for="EstadoCliente">Estado :</label><br>
-				<select name="EstadoCliente" id="EstadoCliente"> 
-					<option value="<?php echo $cliente->EstadoCliente ?>"><?php echo utf8_encode($cliente->nombreEstado); ?></option>   
-              
-             			<?php
-             			
-              			while ($estado = $estados->fetch_object())
-              			{
-               			?>
-                 		<option value="<?php echo $estado->idEstado?>">
-                 			<?php echo utf8_encode($estado->nombreEstado)?>
-                 			</option>  
-            			<?php  
-              			}		  
-              
-             			?>
-				</select>
 				<br><br>
 				<button type="submit">Actualizar</button>
 	</form>
+</center>
 </body>
 </html>

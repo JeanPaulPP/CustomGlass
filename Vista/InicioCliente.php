@@ -19,7 +19,7 @@ if (!isset($_REQUEST['x']))
 <body>
 	<div id="barra">
 		<ul>
-			<li><a href="">Productos</a></li>
+			<li><a href="catalogoProd.php">Productos</a></li>
 		</ul>
 		<ul>	
 			<li><a href="catalogoServ.php">Servicios</a></li>
