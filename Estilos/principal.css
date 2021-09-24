@@ -17,6 +17,7 @@ body{
 	padding: 0;
 	}
 	form h1 {
+		position: center;
 		font-family: 'Kanit', sans-serif;
 		color: #f37d4d;
 		text-shadow: 2px 2px 2px black;
@@ -210,6 +211,7 @@ form .grupo{
 }
 
 input{
+	position: center;
 	width: 78%;
 	font-size: 15px;
 	font-size: 16px;

@@ -1,16 +1,16 @@
 <?php
 extract($_REQUEST);
-if (!isset($_REQUEST['x']))
+if (!isset($_REQUEST['x'])){
   $x=0;
+}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>Cambiar Contraseña</title>
 </head>
 <body>
-	<center>
-		<form action="PrincipalClie.php?pg=../Controlador/ValidarActContraseñaClie" method="POST">
+		<form action="PrincipalClie.php?pg=../Controlador/ValidarActContraseñaClie" method="POST" style="text-align: center; width: 100%;">
 			<div class="grupo">
 				<label>Contraseña Actual</label><br>
 				<input type="password" name="contraActual" id="contraActual" title="Minimo 8 caracteres" required>
@@ -25,14 +25,15 @@ if (!isset($_REQUEST['x']))
 			</div>
 				<button type="submit">Actualizar</button>
 		</form>
-	</center>
 </body>
 <?php
 
-if ($x==1)
+if ($x==1){
   echo "<script>alert(''Se ha actualizado la contraseña'');</script>";
-if ($x==2)
+}
+if ($x==2){
   echo "<script>alert('Las dos contraseñas nuevas no coinciden');</script>";
+}
 if ($x==3) {
 	echo "<script>alert('La contraseña actual no coincide');</script>";
 }

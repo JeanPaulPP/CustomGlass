@@ -1,16 +1,16 @@
 <?php
-	class tipoProducto
+	class TipoProducto
 	{
 		private $idTipoProducto;
 		private $nombreTipoProducto;
 
-		public function tipoSProducto ($idTipoProducto)
+		public function _construct($idTipoProducto)
 		{
 			$this->idTipoProducto=$idTipoProducto;
 		}
 		public function getIdTipoProducto ()
 		{
-			return $this->idTipoProducto = $idTipoProducto ;
+			return $this->idTipoProducto;
 		}
 		public function setIdTipoProducto ($newVal)
 		{
@@ -18,7 +18,7 @@
 		}
 		public function getNombreTipoProducto ()
 		{
-			return $this->nombreTipoProducto = $nombreTipoProducto ;
+			return $this->nombreTipoProducto;
 		}
 		public function setNombreTipoProducto ($newVal)
 		{

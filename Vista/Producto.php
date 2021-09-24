@@ -1,14 +1,14 @@
 <?php
 extract($_REQUEST);
-if (!isset($_REQUEST['x']))
+if (!isset($_REQUEST['x'])){
   $x=0;
+}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>Registrar Producto</title>
-	<!--<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">-->
 </head>
 <?php  
 
@@ -22,7 +22,6 @@ $estados = $objConexion->query($sql1);
 
 ?>
 <body>
-	<center>
 	<form action="../Controlador/agregarProducto.php" id="Form" oninput="IVA.value=(parseInt(costoUnitario.value)*19)/100">
 		<h1>Registrar Producto</h1>
 		<div id="Form">
@@ -66,7 +65,7 @@ $estados = $objConexion->query($sql1);
               			{
                			?>
                  		<option value="<?php echo $tipo->idTipo?>">
-                 			<?php echo $tipo->idTipo?><p> - </p><?php echo ($tipo->tipoProd)?>
+                 			<?php echo $tipo->idTipo?><p> - </p><?php echo $tipo->tipoProd?>
                  			</option>  
             			<?php  
               			}		  
@@ -84,7 +83,7 @@ $estados = $objConexion->query($sql1);
               			{
                			?>
                  		<option value="<?php echo $estado->idEstadoProd?>">
-                 			<?php echo $estado->idEstadoProd?><p> - </p><?php echo ($estado->estadoProd)?>
+                 			<?php echo $estado->idEstadoProd?><p> - </p><?php echo $estado->estadoProd?>
                  			</option>  
             			<?php  
               			}		  
@@ -99,11 +98,12 @@ $estados = $objConexion->query($sql1);
 		</div>
 	</form>
 	<?php 
-	if ($x==1)
+	if ($x==1){
   echo "<script>alert('Se ha agregado el producto correctamente');</script>";
-if ($x==2)
+  }
+if ($x==2){
   echo "<script>alert('No se pudo agregar el producto');</script>";
+}
 ?>
-</center>
 </body>
 </html>

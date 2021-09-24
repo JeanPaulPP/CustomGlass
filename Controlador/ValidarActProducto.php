@@ -7,9 +7,11 @@ $sql="UPDATE producto SET idProducto= '$_REQUEST[idProducto]', EstadoProducto = 
 
 $resultado=$objConexion->query($sql);
 
-if ($resultado)
+if ($resultado){
 	header("location:../Vista/Principal.php?pg=actualizarIdProducto&x=1");
-else
+}
+else{
 	header("location:../Vista/Principal.php?pg=actualizarIdProducto&x=2");
+}
 
 ?>

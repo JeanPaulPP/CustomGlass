@@ -12,7 +12,7 @@ $verificar = $resultado->num_rows;
 if ($verificar==1)  
 {
 	$usuario=$resultado->fetch_object();
-	$_SESSION['user']= $usuario->correoClie;	
+	$_SESSION['client']= $usuario->correoClie;	
 	header("location:../Vista/PrincipalClie.php");	
 }
 else

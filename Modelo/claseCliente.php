@@ -1,5 +1,5 @@
 <?php
-	class cliente 
+	class Cliente 
 	{
 		protected $idCliente;
 		protected $EstadoCliente;
@@ -11,9 +11,9 @@
 		protected $Nombres;
 		protected $Apellidos;
 
-		public function cliente ()
+		public function _construct()
 		{
-
+			#Nada
 		}
 		public function getTelefono()
 		{

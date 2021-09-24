@@ -1,16 +1,16 @@
 <?php
-	class tipoServicio 
+	class TipoServicio 
 	{
 		private $idTipoServicio;
 		private $nombreTipoServicio;
 
-		public function tipoServicio ($idTipoServicio)
+		public function _construct($idTipoServicio)
 		{
 			$this->idTipoServicio=$idTipoServicio;
 		}
 		public function getIdTipoServicio ()
 		{
-			return $this->idTipoServicio = $idTipoServicio ;
+			return $this->idTipoServicio;
 		}
 		public function setIdTipoServicio ($newVal)
 		{
@@ -18,7 +18,7 @@
 		}
 		public function getNombreTipoServicio ()
 		{
-			return $this->nombreTipoServicio = $nombreTipoServicio ;
+			return $this->nombreTipoServicio;
 		}
 		public function setNombreTipoServicio ($newVal)
 		{

@@ -1,7 +1,8 @@
 <?php
 extract($_REQUEST);
-if (!isset($_REQUEST['x']))
+if (!isset($_REQUEST['x'])){
   $x=0;
+}
 ?>
 <?php  
 
@@ -19,13 +20,11 @@ $usuarios = $objConexion->query($sql1);
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>Actualiza Servicio</title>
-	<!--<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">-->
 </head>
 <body>
-	<center>
 	<form action="../Controlador/agregarServicio.php" method="POST" id="Form" enctype="multipart/form-data">
 		<div id="Form">
 			<h1>Servicio</h1>
@@ -106,12 +105,13 @@ $usuarios = $objConexion->query($sql1);
 			<button type="submit">Registrar</button>
 		</div>
 	</form>
-</center>
 	<?php 
-	if ($x==1)
+	if ($x==1){
   echo "<script>alert('Se ha agregado el servicio correctamente');</script>";
-if ($x==2)
+}
+  if ($x==2){
   echo "<script>alert('No se pudo agregar el servicio');</script>";
+}
 ?>
 </body>
 </html>

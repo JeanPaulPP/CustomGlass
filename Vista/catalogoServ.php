@@ -1,11 +1,11 @@
 <?php
 require "../Modelo/conexionBasesDatos.php";
   require "../Modelo/claseServicio.php";
-  $objServicios = new servicio();
+  $objServicios = new Servicio();
   $servicios= $objServicios->consultarServicios();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <title>Servicios</title>
   <meta charset="utf-8">
@@ -20,6 +20,7 @@ require "../Modelo/conexionBasesDatos.php";
 </style>
 </head>
 <body>
+  <div style="text-align: center; width: 100%;">
   <div id="barra">
     <ul>
       <li><a href="catalogoProd.php">Productos</a></li>
@@ -37,10 +38,9 @@ require "../Modelo/conexionBasesDatos.php";
       <li><a href="../index.html">Inicio</a></li>
     </ul>
   </div>
-<h1 align="center">Servicios</h1>
+<h1>Servicios</h1>
 <div id="contenedor">
   <div id="contenedorf">
-    <center>
 
   <?php
   while ($servicio = $servicios->fetch_object())
@@ -48,16 +48,15 @@ require "../Modelo/conexionBasesDatos.php";
    
   ?>
   <div id="card">
-     <img src='<?php echo $servicio->imagenServ; ?>' width='340px' height='220px'>
-       <h4><?php  echo  utf8_encode($servicio->servNombre)  ?></h4>
-        <p id="info"><?php  echo  utf8_encode($servicio->detServicio) ?> </p>
-        <p id="tel">Más información al: <br><?php  echo  utf8_encode($servicio->telefono)  ?></p>
+     <img alt="Custom Glass" src='<?php echo $servicio->imagenServ; ?>' width='340px' height='220px'>
+       <h4><?php  echo  $servicio->servNombre  ?></h4>
+        <p id="info"><?php  echo $servicio->detServicio ?> </p>
+        <p id="tel">Más información al: <br><?php  echo  $servicio->telefono  ?></p>
         </div>
   
   <?php
   }
   ?>
- </center>
 </div>
 </div>
 
@@ -71,34 +70,34 @@ require "../Modelo/conexionBasesDatos.php";
     <div class="colum2">
       <h1>Redes Sociales</h1>
       <div class="row1">
-        <img src="../Imagenes/facebook.png">
+        <img src="../Imagenes/facebook.png" alt="FacebookIcon">
         <label><a href="*">Siguenos en Facebook</a></label>
       </div>
       <div class="row1">
-        <img src="../Imagenes/instagram.png">
+        <img src="../Imagenes/instagram.png" alt="InstagramIcon">
         <label><a href="*">Siguenos en Instagram</a></label>
       </div>
       <div class="row1">
-        <img src="../Imagenes/twitter.png">
+        <img src="../Imagenes/twitter.png" alt="TwitterIcon">
         <label><a href="*">Siguenos en Twitter</a></label>
       </div>
     </div>
     <div class="colum3">
       <h1>Información Contactos</h1>
       <div class="row2">
-        <img src="../Imagenes/telefono.png">
+        <img src="../Imagenes/telefono.png" alt="TelefonoIcon">
         <label>+57 300 605-7447</label>
       </div>
       <div class="row2">
-        <img src="../Imagenes/telefono.png">
+        <img src="../Imagenes/telefono.png" alt="TelefonoIcon">
         <label>+57 304 601-5140</label>
       </div>
       <div class="row2">
-        <img src="../Imagenes/telefono.png">
+        <img src="../Imagenes/telefono.png" alt="TelefonoIcon">
         <label>+57 314 4893063</label>
       </div>
       <div class="row2">
-        <img src="../Imagenes/correo.png">
+        <img src="../Imagenes/correo.png" alt="CorreoIcon">
         <label>jpatinopineros@gmail.com</label>
       </div>
     </div>
@@ -116,4 +115,5 @@ require "../Modelo/conexionBasesDatos.php";
     </div>
   </div>
 </footer>
+</div>
 </body>

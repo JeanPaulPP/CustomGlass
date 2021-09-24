@@ -1,10 +1,11 @@
 <?php
 extract($_REQUEST);
-if (!isset($_REQUEST['x']))
+if (!isset($_REQUEST['x'])){
 	$x=0;
+}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>Inicio de Sesión</title>
@@ -34,25 +35,27 @@ if (!isset($_REQUEST['x']))
 			<li><a href="../index.html">Inicio</a></li>
 		</ul>
 	</div>
-	<div id="contenedor">
-	<center>
+	<div style="text-align: center; width: 100%;">
+	<div id="contenedor" style="margin: auto;">
+		<center>
 	<form action="../Controlador/verificarUsuario.php" method="POST" id="Form">
 		<div id="Form">
 			<h1>Inicio de Sesión</h1>
 			<div class="grupo">
 				<input type="email" name="correo" id="correo" required><span class="barra"></span>
-				<label>Correo</label>
+				<label for="correo">Correo</label>
 			</div>
 
 			<div class="grupo">
 				<input type="password" name="contraseña" id="contraseña" required><span class="barra"></span>
-				<label>Contraseña</label>
+				<label for="contraseña">Contraseña</label>
 			</div>
 
 			<button type="submit">Ingresar</button>
 		</div>
 	</form>
-</center>
+	</center>
+	</div>
 </div>
 <footer>
 	<div class="container-footer-all">
@@ -64,34 +67,34 @@ if (!isset($_REQUEST['x']))
 		<div class="colum2">
 			<h1>Redes Sociales</h1>
 			<div class="row1">
-				<img src="../Imagenes/facebook.png">
+				<img src="../Imagenes/facebook.png" alt="FacebookIcon">
 				<label><a href="*">Siguenos en Facebook</a></label>
 			</div>
 			<div class="row1">
-				<img src="../Imagenes/instagram.png">
+				<img src="../Imagenes/instagram.png" alt="InstagramIcon">
 				<label><a href="*">Siguenos en Instagram</a></label>
 			</div>
 			<div class="row1">
-				<img src="../Imagenes/twitter.png">
+				<img src="../Imagenes/twitter.png" alt="TwitterIcon">
 				<label><a href="*">Siguenos en Twitter</a></label>
 			</div>
 		</div>
 		<div class="colum3">
 			<h1>Información Contactos</h1>
 			<div class="row2">
-				<img src="../Imagenes/telefono.png">
+				<img src="../Imagenes/telefono.png" alt="TelefonoIcon">
 				<label>+57 300 605-7447</label>
 			</div>
 			<div class="row2">
-				<img src="../Imagenes/telefono.png">
+				<img src="../Imagenes/telefono.png" alt="TelefonoIcon">
 				<label>+57 304 601-5140</label>
 			</div>
 			<div class="row2">
-				<img src="../Imagenes/telefono.png">
+				<img src="../Imagenes/telefono.png" alt="TelefonoIcon">
 				<label>+57 314 4893063</label>
 			</div>
 			<div class="row2">
-				<img src="../Imagenes/correo.png">
+				<img src="../Imagenes/correo.png" alt="CorreoIcon">
 				<label>jpatinopineros@gmail.com</label>
 			</div>
 		</div>
@@ -114,12 +117,15 @@ if (!isset($_REQUEST['x']))
 </script>
 	<?php
 
-if ($x==1)
+if ($x==1){
 	echo "<script>alert('Usuario no registrado o los datos ingresados son incorrectos, intente de nuevo');</script>";
-if ($x==2)
+}
+if ($x==2){
 	echo "<script>alert('Debe iniciar sesion para acceder al sistema');</script>";
-if ($x==3)
+}
+if ($x==3){
 	echo "<script>alert('El usuario ha cerrado sesión');</script>";
+}
 if ($x==4) {
 	echo "<script>alert('Se actualizaron correctamente los datos, por favor vuelva a iniciar sesion');</script>";
 }

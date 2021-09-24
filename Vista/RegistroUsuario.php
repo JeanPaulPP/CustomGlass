@@ -1,7 +1,8 @@
 <?php
 extract($_REQUEST);
-if (!isset($_REQUEST['x']))
+if (!isset($_REQUEST['x'])){
   $x=0;
+}
 ?>
 <?php  
 require "../Modelo/conexionBasesDatos.php";
@@ -14,7 +15,7 @@ $roles = $objConexion->query($sql);
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>Registro</title>
@@ -54,7 +55,7 @@ $roles = $objConexion->query($sql);
 				</span>
 
 				<span class="grupo">
-					<input type="password" name="ContraUsuario" id="ContraUsuario" required><span class="barra"></span><img src="../Imagenes/mostrar.png" id="boton">
+					<input type="password" name="ContraUsuario" id="ContraUsuario" required><span class="barra"></span><img src="../Imagenes/mostrar.png" id="boton" alt="VisualizarIcon">
 					<label for="Contraseña">Contraseña</label>
 				</span>
 			</div>
@@ -96,16 +97,16 @@ $roles = $objConexion->query($sql);
 
 			<button type="submit">Registrarme</button>
 		</div>
-		<center>
 		<a href="../index.php">Volver</a>
-	</center>
 	</form>
 	<?php
 
-if ($x==1)
+if ($x==1){
   echo "<script>alert('Se ha registrado correctamente');</script>";
-if ($x==2)
+}
+if ($x==2){
   echo "<script>alert('No se pudo registrar, asegurese de que no tenga una cuenta ya creada');</script>";
+}
 ?>
 </body>
 </html>

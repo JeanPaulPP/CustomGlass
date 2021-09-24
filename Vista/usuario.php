@@ -1,7 +1,8 @@
 <?php
 extract($_REQUEST);
-if (!isset($_REQUEST['x']))
+if (!isset($_REQUEST['x'])){
   $x=0;
+}
 ?>
 <?php
 	$sql="SELECT u.idUsuario, u.Rol, u.CorreoUsuario, u.ContraUsuario, u.NombresUsu, r.nombreRol FROM usuario u, rol r WHERE (u.Rol = r.idRol) AND (u.CorreoUsuario = '$_SESSION[user]')";
@@ -15,12 +16,11 @@ if (!isset($_REQUEST['x']))
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>Mi perfil</title>
 </head>
 <body>
-<center>
 	<form id="form" method="post" action="../Controlador/ValidarActUsuario.php">
 		<h1>Mi Perfil</h1>
 		<span class="grupo">
@@ -35,7 +35,7 @@ if (!isset($_REQUEST['x']))
 				<br><br>
 				<label for="rol">Rol:</label><br>
 				<select name="Rol" id="Rol"> 
-					<option value="<?php echo $usuarioperfile->Rol ?>"><?php echo $usuarioperfile->Rol ?><p> - </p><?php echo ($usuarioperfile->nombreRol); ?></option>   
+					<option value="<?php echo $usuarioperfile->Rol ?>"><?php echo $usuarioperfile->Rol ?><p> - </p><?php echo $usuarioperfile->nombreRol; ?></option>   
               
              			<?php
              			
@@ -43,7 +43,7 @@ if (!isset($_REQUEST['x']))
               			{
                			?>
                  		<option value="<?php echo $rol->idRol?>">
-                 			<?php echo $rol->idRol?><p> - </p><?php echo ($rol->nombreRol)?>
+                 			<?php echo $rol->idRol?><p> - </p><?php echo $rol->nombreRol?>
                  			</option>  
             			<?php  
               			}		  
@@ -58,13 +58,14 @@ if (!isset($_REQUEST['x']))
 				<br><br>
 				<button type="submit">Actualizar</button>
 	</form>
-</center>
 <?php
 
-if ($x==1)
+if ($x==1){
   echo "<script>alert('Se actualizaron correctamente los datos');</script>";
-if ($x==2)
+}
+if ($x==2){
   echo "<script>alert('No se pudo actualizar los datos');</script>";
+}
 ?>
 </body>
 </html>

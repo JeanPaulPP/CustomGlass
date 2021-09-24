@@ -1,5 +1,5 @@
 <?php
-	class producto 
+	class Producto 
 	{
 		protected $idProducto;
 		protected $nombreProd;
@@ -10,41 +10,37 @@
 		protected $EstadoProducto;
 		protected $IVA;
 
-		public function producto ()
-		{
-
-		}
 		public function getIdProducto ()
 		{
-			return$this->$idProducto;
+			return$this->idProducto;
 		}
 		public function getNombreProd ()
 		{
-			return$this->$nombreProd;
+			return$this->nombreProd;
 		}
 		public function getTipoProducto ()
 		{
-			return$this->$TipoProducto;
+			return$this->TipoProducto;
 		}
 		public function getEstadoProducto ()
 		{
-			return$this->$EstadoProducto;
+			return$this->EstadoProducto;
 		}
 		public function getCostoUnitario ()
 		{
-			return$this->$costoUnitario;
+			return$this->costoUnitario;
 		}
 		public function getMedidasProd ()
 		{
-			return$this->$medidasProd;
+			return$this->medidasProd;
 		}
 		public function getMaterialProd ()
 		{
-			return$this->$materialProd;
+			return$this->materialProd;
 		}
 		public function getIVA ()
 		{
-			return$this->$IVA;
+			return$this->IVA;
 		}
 		public function setIdProducto($newVal)
 		{
@@ -109,7 +105,9 @@
 	{
 		$this->Conexion=Conectarse();
 		$sql="SELECT p.idProducto, p.TipoProducto, p.EstadoProducto, p.nombreProd, p.medidasProd, p.materialProd, p.costoUnitario, p.IVA, tp.tipoProd, ep.estadoProd FROM producto p, tipo_producto tp, estado_producto ep WHERE (p.EstadoProducto = ep.idEstadoProd) AND (p.TipoProducto = tp.idTipo) AND (p.idProducto = '$this->idProducto')";
+		$resultado=$this->Conexion->query($sql);
 		$this->Conexion->close();
+		return $resultado;
 	}
 	}
 ?>

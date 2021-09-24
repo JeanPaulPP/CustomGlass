@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>mostrar</title>
 </head>
 <body>
-	<center>
 		<table>
+			<caption>Tabla de imagenes de servicios</caption>
 			<thead>
-				<th>Nombre</th>
-				<th>Imagen</th>
+				<th id="Nombre">Nombre</th>
+				<th id="Imagen">Imagen</th>
 			</thead>
 			<tbody>
 				<?php 
@@ -20,7 +20,7 @@
 						?>
 							<tr>
 								<td><?php echo $row['idServicio']; ?></td>
-								<td><img height="50px" src="data:image/png;base64,<?php echo base64_encode($row['imagenServ']); ?>"></td>
+								<td><img alt="Custom Glass" height="50px" src="data:image/png;base64,<?php echo base64_encode($row['imagenServ']); ?>"></td>
 							</tr>
 
 
@@ -29,6 +29,5 @@
 				?>
 			</tbody>
 		</table>
-	</center>
 </body>
 </html>

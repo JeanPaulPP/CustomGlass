@@ -11,9 +11,11 @@ $objServicio->crearCatalogo($_REQUEST['idCatalogo'], $_REQUEST['Producto'], $_RE
 
 $resultado = $objServicio->registrarCatalogo();
 
-if ($resultado)
+if ($resultado){
 	header("location:../Vista/Principal.php?pg=productoCat&x=1");
-else
+}
+else{
 	header("location:../Vista/Principal.php?pg=productoCat&x=2");
+}
 
 ?>

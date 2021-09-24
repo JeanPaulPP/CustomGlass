@@ -6,12 +6,10 @@ $productox = $objConexion->query($sql);
 $producto = $productox->fetch_object();
 
 $verificar = $productox->num_rows;
-if ($verificar==1)  
-{	
+if ($verificar==1)  {	
 	echo "<script> alert('El numero de identificacion se halló correctamente'); </script>";
 }
-else
-{
+else{
 	header("location:Principal.php?pg=actualizarIdProducto&x=3");  
 }
 $sql1= "SELECT idTipo, tipoProd FROM tipo_producto";
@@ -24,12 +22,11 @@ $estados = $objConexion->query($sql2);
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>Actualizar Producto</title>
 </head>
 <body>
-	<center>
 	<h1>Actualizar Producto</h1>
 	<form id="form" method="post" action="../Controlador/ValidarActProducto.php" oninput="IVA.value=(parseInt(costoUnitario.value)*19)/100">
 		<span class="grupo">
@@ -64,7 +61,7 @@ $estados = $objConexion->query($sql2);
 				<br><br>
 				<label for="TipoProducto">Tipo Producto:</label><br>
 				<select name="TipoProducto" id="TipoProducto"> 
-					<option value="<?php echo $producto->TipoProducto ?>"><?php echo $producto->TipoProducto ?><p> - </p><?php echo ($producto->tipoProd); ?></option>   
+					<option value="<?php echo $producto->TipoProducto ?>"><?php echo $producto->TipoProducto ?><p> - </p><?php echo $producto->tipoProd; ?></option>   
               
              			<?php
              			
@@ -72,7 +69,7 @@ $estados = $objConexion->query($sql2);
               			{
                			?>
                  		<option value="<?php echo $tipo->idTipo?>">
-                 			<?php echo $tipo->idTipo?><p> - </p><?php echo ($tipo->tipoProd)?>
+                 			<?php echo $tipo->idTipo?><p> - </p><?php echo $tipo->tipoProd?>
                  			</option>  
             			<?php  
               			}		  
@@ -101,6 +98,5 @@ $estados = $objConexion->query($sql2);
 				<br><br>
 				<button type="submit">Actualizar</button>
 	</form>
-</center>
 </body>
 </html>

@@ -1,10 +1,11 @@
 <?php
 extract($_REQUEST);
-if (!isset($_REQUEST['x']))
+if (!isset($_REQUEST['x'])){
   $x=0;
+}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>Inicio</title>
 	<link rel="stylesheet" type="text/css" href="../Estilos/Estilos1.css">
@@ -38,24 +39,25 @@ if (!isset($_REQUEST['x']))
 	</style>
 </head>
 <body>
-	<center>
 		<div id="box">
-		<h1><i>Bienvenido A Aluminios Cabrera...</i></h1>
+		<h1><em>Bienvenido A Aluminios Cabrera...</em></h1>
 		<h3>Por favor seleccione una de las siguientes opciones, si usted ya se encuentra registrado en este sistema por favor seleccione "Iniciar Sesion", si usted aun no se encuentra registrado selecione "Registrarse", gracias.</h3>
 		<br><br><br>
 		<a href="Vista/RegistroUsuario.php">Registrarse.</a>
 		<br><br><br>
 		<a href="Vista/InicioCliente.php">Iniciar Sesion.</a>
 	</div>
-	</center>
 </body>
 <?php
 
-if ($x==1)
+if ($x==1){
   echo "<script>alert('Se actualizaron correctamente los datos, por favor vuelva a iniciar sesion');</script>";
-if ($x==2)
+}
+if ($x==2){
   echo "<script>alert('Por favor iniciar sesión');</script>";
-if ($x==3)
+}
+if ($x==3){
   echo "<script>alert('Se ha cerrado la sesión');</script>";
+}
 ?>
 </html>

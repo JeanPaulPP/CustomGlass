@@ -8,20 +8,17 @@ $sql="DELETE FROM cliente WHERE idCliente='$_REQUEST[idCliente]'";
 $resultado = $objConexion->query($sql);
 
 $verificar = $resultado->num_rows;
-if ($verificar==1)  
-{	
-	
+if ($verificar==1){	
+	echo "Verificar funcion";
 }
-else
-{
+else{
 	header("location:../Vista/Principal.php?pg=eliminarClienteId&x=3");  
 }
-if ($resultado)
-	{
+if ($resultado){
 	header('location:../Vista/Principal.php?pg=eliminarClienteId&x=1');
 	}
-	else
-	header('location:../Vista/Principal.php?pg=eliminarClienteId&x=2');{
+	else{
+	header('location:../Vista/Principal.php?pg=eliminarClienteId&x=2');
 	}
 
 ?>

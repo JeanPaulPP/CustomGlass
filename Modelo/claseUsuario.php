@@ -1,5 +1,5 @@
 <?php
-	class usuario 
+	class Usuario 
 	{
 		protected $idUsuario;
 		protected $rol;
@@ -7,9 +7,9 @@
 		protected $ContraUsuario;
 		protected $NombresUsu;
 
-		public function usuario ()
+		public function _construct()
 		{
-
+			#nada
 		}
 		protected function getIdUsuario()
 		{

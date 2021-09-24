@@ -1,17 +1,17 @@
 <?php
-	class detProducto 
+	class DetProducto 
 	{
 		private $idDetalleProducto;
 		private $materialProducto;
 		private $medidaProducto;
 
-		public function detProducto($idDetalleProducto) 
+		public function _construct($idDetalleProducto) 
 		{
 			$this->idDetalleProducto=$idDetalleProducto;
 		}
 		public function getIdDetalleProducto ()
 		{
-			return $this->idDetalleProducto = $idDetalleProducto ;
+			return $this->idDetalleProducto;
 		}
 		public function setIdDetalleProducto ($newVal)
 		{
@@ -19,7 +19,7 @@
 		}
 		public function getMaterialProducto ()
 		{
-			return $this->materialProducto = $materialProducto ;
+			return $this->materialProducto;
 		}
 		public function set ($newVal)
 		{
@@ -27,7 +27,7 @@
 		}
 		public function getMedidaProducto ()
 		{
-			return $this->medidaProducto = $medidaProducto ;
+			return $this->medidaProducto;
 		}
 		public function setMedidaProducto ($newVal)
 		{

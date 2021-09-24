@@ -33,7 +33,7 @@ $usuarios = $objConexion->query($sql1);
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title>Actualiza Servicio</title>
 	<link rel="stylesheet" type="text/css" href="../Estilos/Estilos2.css">

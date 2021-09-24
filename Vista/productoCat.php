@@ -1,7 +1,8 @@
 <?php
 extract($_REQUEST);
-if (!isset($_REQUEST['x']))
+if (!isset($_REQUEST['x'])){
   $x=0;
+}
 ?>
 <?php 
 require "../Modelo/claseProducto.php";
@@ -9,13 +10,12 @@ $objProductos = new producto();
 $Productos = $objProductos->consultarProductos();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>Añadir producto a catálogo</title>
 </head>
 <body>
-	<center>
 	<form action="../Controlador/aggProdCatalogo.php" method="POST" id="form" enctype="multipart/form-data">
 		<h1>Añadir producto a catálogo</h1>
 		<div id="Form">
@@ -30,7 +30,7 @@ $Productos = $objProductos->consultarProductos();
               			{
                			?>
                  		<option value="<?php echo $Producto->idProducto?>">
-                 			<?php echo $Producto->idProducto?><p> - </p><?php echo ($Producto->nombreProd)?>
+                 			<?php echo $Producto->idProducto?><p> - </p><?php echo $Producto->nombreProd?>
                  			</option>  
             			<?php  
               			}		  
@@ -59,13 +59,14 @@ $Productos = $objProductos->consultarProductos();
 			<button type="submit">Registrar</button>
 		</div>
 	</form>
-</center>
 <?php
 
-if ($x==1)
+if ($x==1){
   echo "<script>alert('Se añadio correctamente');</script>";
-if ($x==2)
+}
+if ($x==2){
   echo "<script>alert('No se pudo añadir');</script>";
+}
 ?>
 </body>
 </html>

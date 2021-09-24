@@ -1,17 +1,17 @@
 <?php
-	class detServicio 
+	class DetServicio 
 	{
 		private $idDetServicio;
 		private $caracteristicaServicio;
 		private $contactoServicio;
 
-		public function detServicio ($idDetServicio)
+		public function _construct($idDetServicio)
 		{
 			$this->idDetServicio=$idDetServicio;
 		}
 		public function getIdDetServicio ()
 		{
-			return $this->idDetServicio = $idDetServicio ;
+			return $this->idDetServicio;
 		}
 		public function setIdDetServicio ($newVal)
 		{
@@ -19,7 +19,7 @@
 		}
 		public function getCaracteristicaServicio ()
 		{
-			return $this->caracteristicaServicio = $caracteristicaServicio ;
+			return $this->caracteristicaServicio;
 		}
 		public function setCaracteristicaServicio ($newVal)
 		{
@@ -27,7 +27,7 @@
 		}
 		public function getContactoServicio ()
 		{
-			return $this->contactoServicio = $contactoServicio ;
+			return $this->contactoServicio;
 		}
 		public function setContactoServicio ($newVal)
 		{

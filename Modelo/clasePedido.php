@@ -1,5 +1,5 @@
 <?php
-	class pedido 
+	class Pedido 
 	{
 		private $idPedido;
 		private $fechaPedido;
@@ -8,13 +8,13 @@
 		private $detallePedido;
 		private $estadoPedido;
 
-		public function pedido ($idPedido)
+		public function _construct($idPedido)
 		{
 			$this->idPedido=$idPedido;
 		}
 		public function getIdPedido ()
 		{
-			return $this->idPedido = $idPedido ; 
+			return $this->idPedido; 
 		}
 		public function set ($newVal)
 		{
@@ -22,7 +22,7 @@
 		}
 		public function getFechaPedido ()
 		{
-			return $this->fechaPedido = $fechaPedido ; 
+			return $this->fechaPedido; 
 		}
 		public function setFechaPedido ($newVal)
 		{
@@ -30,7 +30,7 @@
 		}
 		public function getIdCliente ()
 		{
-			return $this->idCliente = $idCliente ; 
+			return $this->idCliente; 
 		}
 		public function setIdCliente ($newVal)
 		{
@@ -38,7 +38,7 @@
 		}
 		public function getPrecioTotal ()
 		{
-			return $this->precioTotal = $precioTotal ; 
+			return $this->precioTotal; 
 		}
 		public function setPrecioTotal ($newVal)
 		{
@@ -46,7 +46,7 @@
 		}
 		public function getDetallePedido ()
 		{
-			return $this->detallePedido = $detallePedido ; 
+			return $this->detallePedido; 
 		}
 		public function setDetallePedido ($newVal)
 		{
@@ -54,7 +54,7 @@
 		}
 		public function getEstadoPedido ()
 		{
-			return $this->estadoPedido = $estadoPedido ; 
+			return $this->estadoPedido; 
 		}
 		public function setEstadoPedido ($newVal)
 		{

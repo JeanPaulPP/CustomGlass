@@ -1,5 +1,5 @@
 <?php
-	class servicio 
+	class Servicio 
 	{
 		protected $idServicio;
 		protected $Usuario;
@@ -9,38 +9,38 @@
 		protected $telefono;
 		protected $imagenServ;
 
-		public function servicio ()
+		public function _construct()
 		{
-
+			#nada
 		}
 
 		public function getIdServicio ()
 		{
-			return$this->$idServicio;
+			return$this->idServicio;
 		}
 		public function getUsuario ()
 		{
-			return$this->$Usuario;
+			return$this->Usuario;
 		}
 		public function getServicio ()
 		{
-			return$this->$Servicio;
+			return$this->Servicio;
 		}
 		public function getDetServicio ()
 		{
-			return$this->$detServicio;
+			return$this->detServicio;
 		}
 		public function getEstado ()
 		{
-			return$this->$Estado;
+			return$this->Estado;
 		}
 		public function getTelefono ()
 		{
-			return$this->$telefono;
+			return$this->telefono;
 		}
 		public function getImagenServ ()
 		{
-			return$this->$imagenServ;
+			return$this->imagenServ;
 		}
 		public function setIdServicio ($newVal)
 		{

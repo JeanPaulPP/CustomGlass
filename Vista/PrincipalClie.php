@@ -1,22 +1,24 @@
 <?php
 session_start();
 extract ($_REQUEST);
-if (!isset($_SESSION['user']))
+if (!isset($_SESSION['client'])){
 	header("location:InicioSesi.php?x=2");
-if (!isset($_REQUEST['pg']))
+}
+if (!isset($_REQUEST['pg'])){
 	$pg="pgInicial";
+}
 ?>
 <?php
 require "../Modelo/conexionBasesDatos.php";
 $objConexion = Conectarse();
-$sqlusu="SELECT * FROM cliente WHERE (correoClie = '$_SESSION[user]')";
+$sqlusu="SELECT * FROM cliente WHERE (correoClie = '$_SESSION[client]')";
 $usuarioN = $objConexion->query($sqlusu);
 
 $usuarioNa = $usuarioN->fetch_object();
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>Custom Glass</title>
@@ -61,34 +63,34 @@ $usuarioNa = $usuarioN->fetch_object();
 		<div class="colum2">
 			<h1>Redes Sociales</h1>
 			<div class="row1">
-				<img src="../Imagenes/facebook.png">
+				<img src="../Imagenes/facebook.png" alt="FacebookIcon">
 				<label><a href="*">Siguenos en Facebook</a></label>
 			</div>
 			<div class="row1">
-				<img src="../Imagenes/instagram.png">
+				<img src="../Imagenes/instagram.png" alt="InstagramIcon">
 				<label><a href="*">Siguenos en Instagram</a></label>
 			</div>
 			<div class="row1">
-				<img src="../Imagenes/twitter.png">
+				<img src="../Imagenes/twitter.png" alt="TwitterIcon">
 				<label><a href="*">Siguenos en Twitter</a></label>
 			</div>
 		</div>
 		<div class="colum3">
 			<h1>Información Contactos</h1>
 			<div class="row2">
-				<img src="../Imagenes/telefono.png">
+				<img src="../Imagenes/telefono.png" alt="TelefonoIcon">
 				<label>+57 300 605-7447</label>
 			</div>
 			<div class="row2">
-				<img src="../Imagenes/telefono.png">
+				<img src="../Imagenes/telefono.png" alt="TelefonoIcon">
 				<label>+57 304 601-5140</label>
 			</div>
 			<div class="row2">
-				<img src="../Imagenes/telefono.png">
+				<img src="../Imagenes/telefono.png" alt="TelefonoIcon">
 				<label>+57 314 4893063</label>
 			</div>
 			<div class="row2">
-				<img src="../Imagenes/correo.png">
+				<img src="../Imagenes/correo.png" alt="CorreoIcon">
 				<label>jpatinopineros@gmail.com</label>
 			</div>
 		</div>

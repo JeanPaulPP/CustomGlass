@@ -13,28 +13,28 @@
 
 		public function getIdProducto ()
 		{
-			return$this->$idProducto
+			return$this->idProducto
 		}
 		public function getNombreProducto ()
 		{
-			return$this->$nombreProducto
+			return$this->nombreProducto
 		}
 		public function getDetalleProducto ()
 		{
-			return$this->$detalleProducto
+			return$this->detalleProducto
 		}
 		public function getEstadoProducto ()
 		{
-			return$this->$estadoProducto
+			return$this->estadoProducto
 		}
 		public function getCostoUnitario ()
 		{
-			return$this->$costoUnitario
+			return$this->costoUnitario
 		}
 		
 		public function getIdPedido ()
 		{
-			return $this->$idPedido;
+			return $this->idPedido;
 		}
 		public function setIdPedido ($newVal)
 		{
@@ -42,7 +42,7 @@
 		}
 		public function getCantidadProducto ()
 		{
-			return $this->$cantidadProducto;
+			return $this->cantidadProducto;
 		}
 		public function setCantidadProducto ($newVal)
 		{
@@ -50,7 +50,7 @@
 		}
 		public function getCostoUnidad ()
 		{
-			return $this->$costoUnidad;
+			return $this->costoUnidad;
 		}
 		public function setCostoUnidad ($newVal)
 		{
@@ -58,7 +58,7 @@
 		}
 		public function getPrecioTotal ()
 		{
-			return $this->$precioTotal;
+			return $this->precioTotal;
 		}
 		public function setPrecioTotal ($newVal)
 		{

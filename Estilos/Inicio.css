@@ -181,13 +181,20 @@ body{
 	height: 110px;
 	background: #202020;
 }
+#barra li ul{
+  	display: none;
+  	position: absolute;
+  }
+  #barra li:hover > ul {
+  	display: block;
+  	list-style: cambodian; 
+  }
 #barra a {
 	color: #C7C7C7;
 	font-family: sans-serif;
 	text-decoration: none;
 	font-size: 18px;
 	padding: 20px;
-	display: inline-block;
 }
 #barra li a:hover{
 	background: #101010;
@@ -195,11 +202,9 @@ body{
 }
 #barra li {
 	padding: 20px;
-	display: inline-block;
 }
 #barra ul {
 	margin: 0;
-	display: inline-block;
 }
 footer {
 	margin: 0;

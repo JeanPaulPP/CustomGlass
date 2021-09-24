@@ -7,9 +7,11 @@ $sql="UPDATE servicio SET idServicio= '$_REQUEST[idServicio]', Usuario = '$_REQU
 
 $resultado=$objConexion->query($sql);
 
-if ($resultado)
+if ($resultado){
 	header("location:../Vista/actualizarIdServicio.php?x=1");
-else
+}
+else{
 	header("location:../Vista/actualizarIdServicio.php?x=2");
+}
 
 ?>

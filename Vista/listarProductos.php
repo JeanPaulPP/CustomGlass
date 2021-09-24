@@ -1,27 +1,27 @@
 <?php
   require "../Modelo/claseProducto.php";
-  #$sql="SELECT p.idProducto, p.nombreProd, p.medidasProd, p.materialProd, p.costoUnitario, p.IVA, tp.tipoProd, ep.estadoProd FROM producto p, tipo_producto tp, estado_producto ep WHERE (p.EstadoProducto = ep.idEstadoProd) AND (p.TipoProducto = tp.idTipo)";
   $objProductos = new producto();
   $productos= $objProductos->consultarProductos();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <title>Listar Productos</title>
 </head>
 <body>
-<h1 align="center">PRODUCTOS</h1>
-<table align="center">
+<h1>PRODUCTOS</h1>
+<table>
+  <caption>Tabla de productos registrados en el sistema</caption>
   <thead>
-  <tr align="center">
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Medidas</th>
-    <th>Material</th>
-    <th>Costo Unitario</th> 
-    <th>IVA</th> 
-    <th>Tipo Producto</th>
-    <th>Estado Producto</th>
+  <tr>
+    <th id="Id">Id</th>
+    <th id="Nombre">Nombre</th>
+    <th id="Medidas">Medidas</th>
+    <th id="Material">Material</th>
+    <th id="Costo">Costo Unitario</th> 
+    <th id="IVA">IVA</th> 
+    <th id="TipoProd">Tipo Producto</th>
+    <th id="EstadoProd">Estado Producto</th>
   </tr>
   </thead>
   <?php
@@ -29,13 +29,13 @@
   {
   ?>
   <tr>
-        <td><?php  echo  ($producto->idProducto)  ?>     </td>
-        <td><?php  echo  ($producto->nombreProd)  ?></td> 
-        <td><?php  echo  ($producto->medidasProd) ?> </td>
-        <td><?php  echo  ($producto->materialProd)  ?></td>
-        <td><?php  echo  ($producto->costoUnitario)  ?></td>
-        <td><?php  echo  ($producto->IVA)  ?></td> 
-        <td><?php  echo  ($producto->tipoProd)  ?></td> 
+        <td><?php  echo  $producto->idProducto  ?>     </td>
+        <td><?php  echo  $producto->nombreProd  ?></td> 
+        <td><?php  echo  $producto->medidasProd ?> </td>
+        <td><?php  echo  $producto->materialProd  ?></td>
+        <td><?php  echo  $producto->costoUnitario  ?></td>
+        <td><?php  echo  $producto->IVA  ?></td> 
+        <td><?php  echo  $producto->tipoProd  ?></td> 
         <td><?php  echo  utf8_decode($producto->estadoProd)  ?></td> 
   </tr>
   <?php
@@ -44,7 +44,5 @@
  
 </table>
 <br>
-      <center>
       <a href="Principal.php">Volver</a>
-      </center>
 </body>

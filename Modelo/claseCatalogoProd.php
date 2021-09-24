@@ -1,6 +1,6 @@
 <?php 
-	class catalogo
-	{
+	class CatalogoProd
+		{
 		protected $idCatalogo ;
 		protected $Producto ;
 		protected $Usuario ;
@@ -8,22 +8,22 @@
 		protected $imagenProd ;
 
 		public function servicio (){
-
+			#nada
 		}
 		public function getIdCatalogo (){
-			return$this->$idCatalogo ;
+			return$this->idCatalogo ;
 		}
 		public function getProducto (){
-			return$this->$Producto ;
+			return$this->Producto ;
 		}
 		public function getUsuario (){
-			return$this->$Usuario ;
+			return$this->Usuario ;
 		}
 		public function getFechaPublicacion (){
-			return$this->$fechaPublicacion ;
+			return$this->fechaPublicacion ;
 		}
 		public function getImagenProd (){
-			return$this->$imagenProd ;
+			return$this->imagenProd ;
 		}
 		public function setIdCatalogo ($newVal){
 			$this->idCatalogo  = $newVal;	
@@ -50,8 +50,7 @@
 		public function registrarCatalogo(){
 			$this->Conexion=Conectarse();
 			$sql="INSERT INTO catalogo (idCatalogo, Producto, Usuario, fechaPublicacion, imagenProd) VALUES ('$this->idCatalogo', '$this->Producto', '$this->Usuario', '$this->fechaPublicacion', '$this->imagenProd')";
-			$resultado = $this->Conexion->query($sql);
-			return $resultado;
+			return $this->Conexion->query($sql);
 		}
 		public function consultarServicios()
 		{

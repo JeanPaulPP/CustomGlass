@@ -81,6 +81,29 @@ form label{
 	pointer-events: none;
 }
 
+table {
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+th, td {
+	padding: 10px;	
+}
+thead {
+	background-color: #202020;
+	border-bottom: solid 5px #C7C7C7; 
+	color: white;
+}
+tr:nth-child(even){
+	background-color: #ddd;
+}
+tr:hover td{
+	background-color: #101010;
+	color: white;
+}
+
+
 footer {
 	margin: 0;
 	padding: 0;
@@ -208,6 +231,7 @@ footer {
 	width: 60%; 
 	overflow: auto;
 	z-index: 4;
+	border-radius: 10px;
 }
 
 @media screen and (max-width: 767px) {
